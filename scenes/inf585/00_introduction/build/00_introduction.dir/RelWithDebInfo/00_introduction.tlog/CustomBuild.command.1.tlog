@@ -1,0 +1,10 @@
+^C:\USERS\PTITG\DOCUMENTS\@M1\INF585\INF585_VCL\SCENES\INF585\00_INTRODUCTION\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ptitg/Documents/@M1/INF585/inf585_vcl/scenes/inf585/00_introduction -BC:/Users/ptitg/Documents/@M1/INF585/inf585_vcl/scenes/inf585/00_introduction/build --check-stamp-file C:/Users/ptitg/Documents/@M1/INF585/inf585_vcl/scenes/inf585/00_introduction/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

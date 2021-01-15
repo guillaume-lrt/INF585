@@ -1,0 +1,1743 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\basic_types\basic_types.cpp">
+      <Filter>vcl\base\basic_types</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\error\error.cpp">
+      <Filter>vcl\base\error</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\rand\rand.cpp">
+      <Filter>vcl\base\rand</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\string\string.cpp">
+      <Filter>vcl\base\string</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer\test\test_buffer.cpp">
+      <Filter>vcl\containers\buffer\test</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\special_types\special_types.cpp">
+      <Filter>vcl\containers\buffer_stack\special_types</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\test\test_buffer_stack.cpp">
+      <Filter>vcl\containers\buffer_stack\test</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid\test\test_grid.cpp">
+      <Filter>vcl\containers\grid\test</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid_stack\grid_stack_2D\test\test_grid_stack_2D.cpp">
+      <Filter>vcl\containers\grid_stack\grid_stack_2D\test</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\offset_grid\offset_grid.cpp">
+      <Filter>vcl\containers\offset_grid</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\curve_drawable\curve_drawable.cpp">
+      <Filter>vcl\display\drawable\curve_drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\mesh_drawable\mesh_drawable.cpp">
+      <Filter>vcl\display\drawable\mesh_drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\mesh_normal_drawable\mesh_normal_drawable.cpp">
+      <Filter>vcl\display\drawable\mesh_normal_drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\mesh_wireframe_drawable\mesh_wireframe_drawable.cpp">
+      <Filter>vcl\display\drawable\mesh_wireframe_drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\segments_drawable\segments_drawable.cpp">
+      <Filter>vcl\display\drawable\segments_drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\shading_parameters\shading_parameters.cpp">
+      <Filter>vcl\display\drawable\shading_parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\trajectory_drawable\trajectory_drawable.cpp">
+      <Filter>vcl\display\drawable\trajectory_drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\image\image.cpp">
+      <Filter>vcl\display\image</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\debug\debug.cpp">
+      <Filter>vcl\display\opengl\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\helper\opengl_helper.cpp">
+      <Filter>vcl\display\opengl\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\shaders\shaders.cpp">
+      <Filter>vcl\display\opengl\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\texture\texture.cpp">
+      <Filter>vcl\display\opengl\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\uniform\uniform.cpp">
+      <Filter>vcl\display\opengl\uniform</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\window\window.cpp">
+      <Filter>vcl\display\window</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\files\files.cpp">
+      <Filter>vcl\files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_around_center\camera_around_center.cpp">
+      <Filter>vcl\interaction\camera\camera_around_center</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_base\camera_base.cpp">
+      <Filter>vcl\interaction\camera\camera_base</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_head\camera_head.cpp">
+      <Filter>vcl\interaction\camera\camera_head</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_spherical_coordinates\camera_spherical_coordinates.cpp">
+      <Filter>vcl\interaction\camera\camera_spherical_coordinates</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\common_functions\common_functions.cpp">
+      <Filter>vcl\interaction\camera\common_functions</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\glfw_interaction\glfw_interaction.cpp">
+      <Filter>vcl\interaction\glfw_interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\gui\gui.cpp">
+      <Filter>vcl\interaction\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_basic\timer_basic.cpp">
+      <Filter>vcl\interaction\timer\timer_basic</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_event_periodic\timer_event_periodic.cpp">
+      <Filter>vcl\interaction\timer\timer_event_periodic</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_fps\timer_fps.cpp">
+      <Filter>vcl\interaction\timer\timer_fps</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_interval\timer_interval.cpp">
+      <Filter>vcl\interaction\timer\timer_interval</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\tracker\velocity_tracker\velocity_tracker.cpp">
+      <Filter>vcl\interaction\tracker\velocity_tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\affine\affine_rt\affine_rt.cpp">
+      <Filter>vcl\math\affine\affine_rt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\affine\affine_rts\affine_rts.cpp">
+      <Filter>vcl\math\affine\affine_rts</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\frame\frame.cpp">
+      <Filter>vcl\math\frame</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\interpolation\interpolation.cpp">
+      <Filter>vcl\math\interpolation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\matrix_stack\special_types\definition\special_types.cpp">
+      <Filter>vcl\math\matrix\matrix_stack\special_types\definition</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\matrix_stack\special_types\mat4\mat4.cpp">
+      <Filter>vcl\math\matrix\matrix_stack\special_types\mat4</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\test\test_matrix_stack.cpp">
+      <Filter>vcl\math\matrix\test</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\projection\projection.cpp">
+      <Filter>vcl\math\projection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\quaternion\quaternion.cpp">
+      <Filter>vcl\math\quaternion</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\rotation\rotation.cpp">
+      <Filter>vcl\math\rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\rotation\test\test_rotation.cpp">
+      <Filter>vcl\math\rotation\test</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\vec_mat\test\test_vec_mat.cpp">
+      <Filter>vcl\math\vec_mat\test</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\vec_mat\vec_mat.cpp">
+      <Filter>vcl\math\vec_mat</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shaders_preset\shaders_preset.cpp">
+      <Filter>vcl\shaders_preset</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\curve\curve.cpp">
+      <Filter>vcl\shape\curve</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\intersection\intersection.cpp">
+      <Filter>vcl\shape\intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\loader\obj\obj.cpp">
+      <Filter>vcl\shape\mesh\loader\obj</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\primitive\mesh_primitive.cpp">
+      <Filter>vcl\shape\mesh\primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\structure\mesh.cpp">
+      <Filter>vcl\shape\mesh\structure</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\noise\noise.cpp">
+      <Filter>vcl\shape\noise</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\glad\src\glad.cpp">
+      <Filter>third_party\src\glad\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui.cpp">
+      <Filter>third_party\src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_demo.cpp">
+      <Filter>third_party\src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_draw.cpp">
+      <Filter>third_party\src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_impl_glfw.cpp">
+      <Filter>third_party\src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_impl_opengl3.cpp">
+      <Filter>third_party\src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_widgets.cpp">
+      <Filter>third_party\src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\lodepng\lodepng.cpp">
+      <Filter>third_party\src\lodepng</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\simplexnoise\simplexnoise1234.cpp">
+      <Filter>third_party\src\simplexnoise</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\scenes\inf585\00_introduction\src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\base.hpp">
+      <Filter>vcl\base</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\basic_types\basic_types.hpp">
+      <Filter>vcl\base\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\error\error.hpp">
+      <Filter>vcl\base\error</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\rand\rand.hpp">
+      <Filter>vcl\base\rand</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\stl\stl.hpp">
+      <Filter>vcl\base\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\string\string.hpp">
+      <Filter>vcl\base\string</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\base\types\types.hpp">
+      <Filter>vcl\base\types</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer\buffer.hpp">
+      <Filter>vcl\containers\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer\test\test_buffer.hpp">
+      <Filter>vcl\containers\buffer\test</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\buffer_stack.hpp">
+      <Filter>vcl\containers\buffer_stack</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\implementation\buffer_stack.hpp">
+      <Filter>vcl\containers\buffer_stack\implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\implementation\buffer_stack2.hpp">
+      <Filter>vcl\containers\buffer_stack\implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\implementation\buffer_stack3.hpp">
+      <Filter>vcl\containers\buffer_stack\implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\implementation\buffer_stack4.hpp">
+      <Filter>vcl\containers\buffer_stack\implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\special_types\special_types.hpp">
+      <Filter>vcl\containers\buffer_stack\special_types</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\buffer_stack\test\test_buffer_stack.hpp">
+      <Filter>vcl\containers\buffer_stack\test</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\containers.hpp">
+      <Filter>vcl\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid\grid.hpp">
+      <Filter>vcl\containers\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid\grid_2D\grid_2D.hpp">
+      <Filter>vcl\containers\grid\grid_2D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid\grid_3D\grid_3D.hpp">
+      <Filter>vcl\containers\grid\grid_3D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid\test\test_grid.hpp">
+      <Filter>vcl\containers\grid\test</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid_stack\grid_stack.hpp">
+      <Filter>vcl\containers\grid_stack</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid_stack\grid_stack_2D\grid_stack_2D.hpp">
+      <Filter>vcl\containers\grid_stack\grid_stack_2D</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\grid_stack\grid_stack_2D\test\test_grid_stack_2D.hpp">
+      <Filter>vcl\containers\grid_stack\grid_stack_2D\test</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\containers\offset_grid\offset_grid.hpp">
+      <Filter>vcl\containers\offset_grid</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\display.hpp">
+      <Filter>vcl\display</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\curve_drawable\curve_drawable.hpp">
+      <Filter>vcl\display\drawable\curve_drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\drawable.hpp">
+      <Filter>vcl\display\drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\mesh_drawable\mesh_drawable.hpp">
+      <Filter>vcl\display\drawable\mesh_drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\mesh_normal_drawable\mesh_normal_drawable.hpp">
+      <Filter>vcl\display\drawable\mesh_normal_drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\mesh_wireframe_drawable\mesh_wireframe_drawable.hpp">
+      <Filter>vcl\display\drawable\mesh_wireframe_drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\segments_drawable\segments_drawable.hpp">
+      <Filter>vcl\display\drawable\segments_drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\shading_parameters\shading_parameters.hpp">
+      <Filter>vcl\display\drawable\shading_parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\drawable\trajectory_drawable\trajectory_drawable.hpp">
+      <Filter>vcl\display\drawable\trajectory_drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\image\image.hpp">
+      <Filter>vcl\display\image</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\debug\debug.hpp">
+      <Filter>vcl\display\opengl\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\glad\glad.hpp">
+      <Filter>vcl\display\opengl\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\helper\opengl_helper.hpp">
+      <Filter>vcl\display\opengl\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\opengl.hpp">
+      <Filter>vcl\display\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\shaders\shaders.hpp">
+      <Filter>vcl\display\opengl\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\texture\texture.hpp">
+      <Filter>vcl\display\opengl\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\opengl\uniform\uniform.hpp">
+      <Filter>vcl\display\opengl\uniform</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\display\window\window.hpp">
+      <Filter>vcl\display\window</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\files\files.hpp">
+      <Filter>vcl\files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera.hpp">
+      <Filter>vcl\interaction\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_around_center\camera_around_center.hpp">
+      <Filter>vcl\interaction\camera\camera_around_center</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_base\camera_base.hpp">
+      <Filter>vcl\interaction\camera\camera_base</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_head\camera_head.hpp">
+      <Filter>vcl\interaction\camera\camera_head</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\camera_spherical_coordinates\camera_spherical_coordinates.hpp">
+      <Filter>vcl\interaction\camera\camera_spherical_coordinates</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\camera\common_functions\common_functions.hpp">
+      <Filter>vcl\interaction\camera\common_functions</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\glfw_interaction\glfw_interaction.hpp">
+      <Filter>vcl\interaction\glfw_interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\gui\gui.hpp">
+      <Filter>vcl\interaction\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\interaction.hpp">
+      <Filter>vcl\interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer.hpp">
+      <Filter>vcl\interaction\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_basic\timer_basic.hpp">
+      <Filter>vcl\interaction\timer\timer_basic</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_event_periodic\timer_event_periodic.hpp">
+      <Filter>vcl\interaction\timer\timer_event_periodic</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_fps\timer_fps.hpp">
+      <Filter>vcl\interaction\timer\timer_fps</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\timer\timer_interval\timer_interval.hpp">
+      <Filter>vcl\interaction\timer\timer_interval</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\tracker\tracker.hpp">
+      <Filter>vcl\interaction\tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\interaction\tracker\velocity_tracker\velocity_tracker.hpp">
+      <Filter>vcl\interaction\tracker\velocity_tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\affine\affine.hpp">
+      <Filter>vcl\math\affine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\affine\affine_rt\affine_rt.hpp">
+      <Filter>vcl\math\affine\affine_rt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\affine\affine_rts\affine_rts.hpp">
+      <Filter>vcl\math\affine\affine_rts</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\frame\frame.hpp">
+      <Filter>vcl\math\frame</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\interpolation\interpolation.hpp">
+      <Filter>vcl\math\interpolation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\math.hpp">
+      <Filter>vcl\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\matrix.hpp">
+      <Filter>vcl\math\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\matrix_stack\matrix_stack.hpp">
+      <Filter>vcl\math\matrix\matrix_stack</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\matrix_stack\special_types\definition\special_types.hpp">
+      <Filter>vcl\math\matrix\matrix_stack\special_types\definition</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\matrix_stack\special_types\mat4\mat4.hpp">
+      <Filter>vcl\math\matrix\matrix_stack\special_types\mat4</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\matrix_stack\special_types\special_types.hpp">
+      <Filter>vcl\math\matrix\matrix_stack\special_types</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\matrix\test\test_matrix_stack.hpp">
+      <Filter>vcl\math\matrix\test</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\projection\projection.hpp">
+      <Filter>vcl\math\projection</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\quaternion\quaternion.hpp">
+      <Filter>vcl\math\quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\rotation\rotation.hpp">
+      <Filter>vcl\math\rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\rotation\test\test_rotation.hpp">
+      <Filter>vcl\math\rotation\test</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\vec_mat\test\test_vec_mat.hpp">
+      <Filter>vcl\math\vec_mat\test</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\math\vec_mat\vec_mat.hpp">
+      <Filter>vcl\math\vec_mat</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shaders_preset\shaders_preset.hpp">
+      <Filter>vcl\shaders_preset</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\curve\curve.hpp">
+      <Filter>vcl\shape\curve</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\intersection\intersection.hpp">
+      <Filter>vcl\shape\intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\loader\loader.hpp">
+      <Filter>vcl\shape\mesh\loader</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\loader\obj\obj.hpp">
+      <Filter>vcl\shape\mesh\loader\obj</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\mesh.hpp">
+      <Filter>vcl\shape\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\primitive\mesh_primitive.hpp">
+      <Filter>vcl\shape\mesh\primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\mesh\structure\mesh.hpp">
+      <Filter>vcl\shape\mesh\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\noise\noise.hpp">
+      <Filter>vcl\shape\noise</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\shape\shape.hpp">
+      <Filter>vcl\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\vcl\vcl.hpp">
+      <Filter>vcl</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Cholesky\LDLT.h">
+      <Filter>third_party\src\eigen\Eigen\src\Cholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Cholesky\LLT.h">
+      <Filter>third_party\src\eigen\Eigen\src\Cholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Cholesky\LLT_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\Cholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\CholmodSupport\CholmodSupport.h">
+      <Filter>third_party\src\eigen\Eigen\src\CholmodSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Array.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\ArrayBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\ArrayWrapper.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Assign.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\AssignEvaluator.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Assign_MKL.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\BandMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Block.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\BooleanRedux.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CommaInitializer.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\ConditionEstimator.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CoreEvaluators.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CoreIterators.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CwiseBinaryOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CwiseNullaryOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CwiseTernaryOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CwiseUnaryOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\CwiseUnaryView.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\DenseBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\DenseCoeffsBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\DenseStorage.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Diagonal.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\DiagonalMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\DiagonalProduct.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Dot.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\EigenBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\ForceAlignedAccess.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Fuzzy.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\GeneralProduct.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\GenericPacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\GlobalFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\IO.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Inverse.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Map.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\MapBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\MathFunctionsImpl.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Matrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\MatrixBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\NestByValue.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\NoAlias.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\NumTraits.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\PermutationMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\PlainObjectBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Product.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\ProductEvaluators.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Random.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Redux.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Ref.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Replicate.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\ReturnByValue.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Reverse.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Select.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\SelfAdjointView.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\SelfCwiseBinaryOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Solve.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\SolveTriangular.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\SolverBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\StableNorm.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Stride.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Swap.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Transpose.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Transpositions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\TriangularMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\VectorBlock.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\VectorwiseOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\Visitor.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AVX\Complex.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AVX</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AVX\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AVX</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AVX\PacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AVX</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AVX\TypeCasting.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AVX</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AVX512\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AVX512</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AVX512\PacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AVX512</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AltiVec\Complex.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AltiVec</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AltiVec\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AltiVec</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\AltiVec\PacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\AltiVec</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\CUDA\Complex.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\CUDA</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\CUDA\Half.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\CUDA</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\CUDA\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\CUDA</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\CUDA\PacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\CUDA</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\CUDA\PacketMathHalf.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\CUDA</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\CUDA\TypeCasting.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\CUDA</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\Default\ConjHelper.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\Default</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\Default\Settings.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\Default</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\NEON\Complex.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\NEON</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\NEON\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\NEON</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\NEON\PacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\NEON</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\SSE\Complex.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\SSE</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\SSE\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\SSE</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\SSE\PacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\SSE</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\SSE\TypeCasting.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\SSE</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\ZVector\Complex.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\ZVector</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\ZVector\MathFunctions.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\ZVector</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\arch\ZVector\PacketMath.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\arch\ZVector</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\functors\AssignmentFunctors.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\functors</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\functors\BinaryFunctors.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\functors</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\functors\NullaryFunctors.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\functors</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\functors\StlFunctors.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\functors</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\functors\TernaryFunctors.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\functors</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\functors\UnaryFunctors.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\functors</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\GeneralBlockPanelKernel.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\GeneralMatrixMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\GeneralMatrixMatrixTriangular.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\GeneralMatrixMatrixTriangular_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\GeneralMatrixMatrix_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\GeneralMatrixVector.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\GeneralMatrixVector_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\Parallelizer.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\SelfadjointMatrixMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\SelfadjointMatrixMatrix_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\SelfadjointMatrixVector.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\SelfadjointMatrixVector_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\SelfadjointProduct.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\SelfadjointRank2Update.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\TriangularMatrixMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\TriangularMatrixMatrix_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\TriangularMatrixVector.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\TriangularMatrixVector_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\TriangularSolverMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\TriangularSolverMatrix_BLAS.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\products\TriangularSolverVector.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\BlasUtil.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\Constants.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\DisableStupidWarnings.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\ForwardDeclarations.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\MKL_support.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\Macros.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\Memory.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\Meta.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\NonMPL2.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\ReenableStupidWarnings.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\StaticAssert.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Core\util\XprHelper.h">
+      <Filter>third_party\src\eigen\Eigen\src\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\ComplexEigenSolver.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\ComplexSchur.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\ComplexSchur_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\EigenSolver.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\GeneralizedEigenSolver.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\HessenbergDecomposition.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\MatrixBaseEigenvalues.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\RealQZ.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\RealSchur.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\RealSchur_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\SelfAdjointEigenSolver.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\SelfAdjointEigenSolver_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Eigenvalues\Tridiagonalization.h">
+      <Filter>third_party\src\eigen\Eigen\src\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\AlignedBox.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\AngleAxis.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\EulerAngles.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Homogeneous.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Hyperplane.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\OrthoMethods.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\ParametrizedLine.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Quaternion.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Rotation2D.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\RotationBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Scaling.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Transform.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Translation.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\Umeyama.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Geometry\arch\Geometry_SSE.h">
+      <Filter>third_party\src\eigen\Eigen\src\Geometry\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Householder\BlockHouseholder.h">
+      <Filter>third_party\src\eigen\Eigen\src\Householder</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Householder\Householder.h">
+      <Filter>third_party\src\eigen\Eigen\src\Householder</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Householder\HouseholderSequence.h">
+      <Filter>third_party\src\eigen\Eigen\src\Householder</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\BasicPreconditioners.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\BiCGSTAB.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\ConjugateGradient.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\IncompleteCholesky.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\IncompleteLUT.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\IterativeSolverBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\LeastSquareConjugateGradient.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\IterativeLinearSolvers\SolveWithGuess.h">
+      <Filter>third_party\src\eigen\Eigen\src\IterativeLinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\Jacobi\Jacobi.h">
+      <Filter>third_party\src\eigen\Eigen\src\Jacobi</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\LU\Determinant.h">
+      <Filter>third_party\src\eigen\Eigen\src\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\LU\FullPivLU.h">
+      <Filter>third_party\src\eigen\Eigen\src\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\LU\InverseImpl.h">
+      <Filter>third_party\src\eigen\Eigen\src\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\LU\PartialPivLU.h">
+      <Filter>third_party\src\eigen\Eigen\src\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\LU\PartialPivLU_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\LU\arch\Inverse_SSE.h">
+      <Filter>third_party\src\eigen\Eigen\src\LU\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\MetisSupport\MetisSupport.h">
+      <Filter>third_party\src\eigen\Eigen\src\MetisSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\OrderingMethods\Amd.h">
+      <Filter>third_party\src\eigen\Eigen\src\OrderingMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\OrderingMethods\Eigen_Colamd.h">
+      <Filter>third_party\src\eigen\Eigen\src\OrderingMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\OrderingMethods\Ordering.h">
+      <Filter>third_party\src\eigen\Eigen\src\OrderingMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\PaStiXSupport\PaStiXSupport.h">
+      <Filter>third_party\src\eigen\Eigen\src\PaStiXSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\PardisoSupport\PardisoSupport.h">
+      <Filter>third_party\src\eigen\Eigen\src\PardisoSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\QR\ColPivHouseholderQR.h">
+      <Filter>third_party\src\eigen\Eigen\src\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\QR\ColPivHouseholderQR_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\QR\CompleteOrthogonalDecomposition.h">
+      <Filter>third_party\src\eigen\Eigen\src\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\QR\FullPivHouseholderQR.h">
+      <Filter>third_party\src\eigen\Eigen\src\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\QR\HouseholderQR.h">
+      <Filter>third_party\src\eigen\Eigen\src\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\QR\HouseholderQR_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SPQRSupport\SuiteSparseQRSupport.h">
+      <Filter>third_party\src\eigen\Eigen\src\SPQRSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SVD\BDCSVD.h">
+      <Filter>third_party\src\eigen\Eigen\src\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SVD\JacobiSVD.h">
+      <Filter>third_party\src\eigen\Eigen\src\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SVD\JacobiSVD_LAPACKE.h">
+      <Filter>third_party\src\eigen\Eigen\src\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SVD\SVDBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SVD\UpperBidiagonalization.h">
+      <Filter>third_party\src\eigen\Eigen\src\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCholesky\SimplicialCholesky.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCholesky\SimplicialCholesky_impl.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\AmbiVector.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\CompressedStorage.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\ConservativeSparseSparseProduct.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\MappedSparseMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseAssign.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseBlock.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseColEtree.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseCompressedBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseCwiseBinaryOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseCwiseUnaryOp.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseDenseProduct.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseDiagonalProduct.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseDot.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseFuzzy.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseMap.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseMatrixBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparsePermutation.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseProduct.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseRedux.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseRef.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseSelfAdjointView.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseSolverBase.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseSparseProductWithPruning.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseTranspose.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseTriangularView.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseUtil.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseVector.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\SparseView.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseCore\TriangularSolver.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLUImpl.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_Memory.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_Structs.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_SupernodalMatrix.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_Utils.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_column_bmod.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_column_dfs.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_copy_to_ucol.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_gemm_kernel.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_heap_relax_snode.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_kernel_bmod.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_panel_bmod.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_panel_dfs.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_pivotL.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_pruneL.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseLU\SparseLU_relax_snode.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SparseQR\SparseQR.h">
+      <Filter>third_party\src\eigen\Eigen\src\SparseQR</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\StlSupport\StdDeque.h">
+      <Filter>third_party\src\eigen\Eigen\src\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\StlSupport\StdList.h">
+      <Filter>third_party\src\eigen\Eigen\src\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\StlSupport\StdVector.h">
+      <Filter>third_party\src\eigen\Eigen\src\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\StlSupport\details.h">
+      <Filter>third_party\src\eigen\Eigen\src\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\SuperLUSupport\SuperLUSupport.h">
+      <Filter>third_party\src\eigen\Eigen\src\SuperLUSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\UmfPackSupport\UmfPackSupport.h">
+      <Filter>third_party\src\eigen\Eigen\src\UmfPackSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\misc\Image.h">
+      <Filter>third_party\src\eigen\Eigen\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\misc\Kernel.h">
+      <Filter>third_party\src\eigen\Eigen\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\misc\RealSvd2x2.h">
+      <Filter>third_party\src\eigen\Eigen\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\misc\blas.h">
+      <Filter>third_party\src\eigen\Eigen\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\misc\lapack.h">
+      <Filter>third_party\src\eigen\Eigen\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\misc\lapacke.h">
+      <Filter>third_party\src\eigen\Eigen\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\misc\lapacke_mangling.h">
+      <Filter>third_party\src\eigen\Eigen\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\plugins\ArrayCwiseBinaryOps.h">
+      <Filter>third_party\src\eigen\Eigen\src\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\plugins\ArrayCwiseUnaryOps.h">
+      <Filter>third_party\src\eigen\Eigen\src\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\plugins\BlockMethods.h">
+      <Filter>third_party\src\eigen\Eigen\src\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\plugins\CommonCwiseBinaryOps.h">
+      <Filter>third_party\src\eigen\Eigen\src\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\plugins\CommonCwiseUnaryOps.h">
+      <Filter>third_party\src\eigen\Eigen\src\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\plugins\MatrixCwiseBinaryOps.h">
+      <Filter>third_party\src\eigen\Eigen\src\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\eigen\Eigen\src\plugins\MatrixCwiseUnaryOps.h">
+      <Filter>third_party\src\eigen\Eigen\src\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\glad\include\glad\glad.hpp">
+      <Filter>third_party\src\glad\include\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imconfig.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_impl_glfw.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_impl_opengl3.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imgui_internal.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imstb_rectpack.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imstb_textedit.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\imgui\imstb_truetype.h">
+      <Filter>third_party\src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\lodepng\lodepng.h">
+      <Filter>third_party\src\lodepng</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\library\third_party\src\simplexnoise\simplexnoise1234.hpp">
+      <Filter>third_party\src\simplexnoise</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\scenes\inf585\00_introduction\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{48F70CD1-A0D6-313A-A71A-407357B3CB89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{7374E7B5-2959-3795-8009-B95194B134C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src">
+      <UniqueIdentifier>{8960F83B-6A42-320B-90F9-74A0E156D36A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen">
+      <UniqueIdentifier>{F0886DD0-592E-3978-AE99-9AB495F8F659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen">
+      <UniqueIdentifier>{43879D39-EB99-3211-B0D8-F20A68453101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src">
+      <UniqueIdentifier>{BF8E0CE5-FE77-3472-9156-3E43261E8C79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Cholesky">
+      <UniqueIdentifier>{D9994AC4-0EC6-3B4C-8569-234988C07EAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\CholmodSupport">
+      <UniqueIdentifier>{60FE74AC-21F8-33C9-9719-AA2EBA890042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core">
+      <UniqueIdentifier>{ED8ACAE7-E725-3795-A16C-337802F4EB76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch">
+      <UniqueIdentifier>{1487CE7C-E507-385C-B552-B6AE2C82E013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\AVX">
+      <UniqueIdentifier>{77725D8A-2F76-3A1D-A27A-84D303B9029F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\AVX512">
+      <UniqueIdentifier>{487D3267-7D9F-3E4F-B8F2-BC8669E0A8CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\AltiVec">
+      <UniqueIdentifier>{45262AC7-8FD3-3780-B8A5-9D080D92C542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\CUDA">
+      <UniqueIdentifier>{055B704C-7A42-397B-A1B8-93159497E694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\Default">
+      <UniqueIdentifier>{6408069A-A307-3A6A-B01E-4908A99BC4AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\NEON">
+      <UniqueIdentifier>{4671B31A-BC0D-39FB-A6D7-EACBE9B158E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\SSE">
+      <UniqueIdentifier>{48D333EC-1D15-30AC-9B66-5B046804EA2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\arch\ZVector">
+      <UniqueIdentifier>{4B359A21-E031-3304-93BC-CFEAAE51E2A5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\functors">
+      <UniqueIdentifier>{2358FBB5-EA8E-390D-9191-96DB97E9BAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\products">
+      <UniqueIdentifier>{EF9E7005-B03C-3016-876E-3FD5B9085EA9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Core\util">
+      <UniqueIdentifier>{DB69DFF9-BFD3-32ED-821B-575949437940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Eigenvalues">
+      <UniqueIdentifier>{14FEDB19-B55D-371B-9957-8B787DF55E00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Geometry">
+      <UniqueIdentifier>{A2CAA99A-B907-30C0-AE7D-3DD2197A1CA0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Geometry\arch">
+      <UniqueIdentifier>{F9411FB1-F3B4-398A-8A0C-8E09DF53D385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Householder">
+      <UniqueIdentifier>{9B2B1B42-37C4-3DE3-B84F-63392C10BB12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\IterativeLinearSolvers">
+      <UniqueIdentifier>{85E0D2BC-1EA4-32B8-BFC3-6ED172CFFCB6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\Jacobi">
+      <UniqueIdentifier>{492B2E01-EA05-3A07-ABF3-247E840AB296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\LU">
+      <UniqueIdentifier>{E9493B24-A2DF-32AB-9764-0190A535D59D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\LU\arch">
+      <UniqueIdentifier>{74F37151-BA0C-3AA0-9752-7A9F1DD1631C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\MetisSupport">
+      <UniqueIdentifier>{47DD0F12-365D-351F-843C-CCF74222477D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\OrderingMethods">
+      <UniqueIdentifier>{091F68E7-821E-39C7-9675-015121A0FA2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\PaStiXSupport">
+      <UniqueIdentifier>{C5A2E71A-4315-3B12-A24D-0CF62333448F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\PardisoSupport">
+      <UniqueIdentifier>{9E85448D-A7C4-3A11-985C-A8D55F3B943B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\QR">
+      <UniqueIdentifier>{CBD7C9AE-584D-3EF1-95B2-3A9479CB10BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\SPQRSupport">
+      <UniqueIdentifier>{3AA89DD1-D833-30A8-80CE-5672C1E226B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\SVD">
+      <UniqueIdentifier>{F4CFDF35-BFAC-371A-8975-916396AFD6BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\SparseCholesky">
+      <UniqueIdentifier>{89A1A6D6-B4E3-319E-B4BF-010A943BBF38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\SparseCore">
+      <UniqueIdentifier>{2EA76653-BFAB-31F2-85AF-E95B17128748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\SparseLU">
+      <UniqueIdentifier>{9B3658DE-3C3D-35C2-920F-2C5FB1EC4380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\SparseQR">
+      <UniqueIdentifier>{3516559F-91DD-3FF3-8BE0-AA34FD40B816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\StlSupport">
+      <UniqueIdentifier>{B3D4A8A6-D531-37DB-8D8E-ACA61F54CB08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\SuperLUSupport">
+      <UniqueIdentifier>{BF7418EB-085A-30C5-8D95-76C5C740544F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\UmfPackSupport">
+      <UniqueIdentifier>{86800095-651F-3091-83A7-38A016679D2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\misc">
+      <UniqueIdentifier>{204866DA-4C89-3435-BB85-BBF7408E5EF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\eigen\Eigen\src\plugins">
+      <UniqueIdentifier>{5AADBE38-3510-37FF-8B71-4A65DC874EEB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\glad">
+      <UniqueIdentifier>{6937BD33-9430-3615-A83E-99CD000686E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\glad\include">
+      <UniqueIdentifier>{67A55101-CCC7-3ADA-AA72-B5DB17E0D175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\glad\include\glad">
+      <UniqueIdentifier>{43808155-BB2D-30DB-917E-05235EB81514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\glad\src">
+      <UniqueIdentifier>{40A29CE3-33E4-3AA2-A03A-EF7DCF01DEFC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\imgui">
+      <UniqueIdentifier>{987BAF6C-18A3-3D93-975A-4859ADD5E0F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\lodepng">
+      <UniqueIdentifier>{DCAAF33D-9D34-34B0-8C54-7B254017781E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\src\simplexnoise">
+      <UniqueIdentifier>{C89F2F5B-FB59-3558-A7B1-18533D60745F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl">
+      <UniqueIdentifier>{D6B1A2E1-7293-3FC5-B308-C0FCD9DB2EF8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\base">
+      <UniqueIdentifier>{5FB86681-B822-3BCC-9D1B-FAF14EDB3BA5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\base\basic_types">
+      <UniqueIdentifier>{9C5DFA0F-B058-3DA3-A328-8424DC017A7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\base\error">
+      <UniqueIdentifier>{B9D01982-5E9A-32C4-B670-B28FD1D74BD8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\base\rand">
+      <UniqueIdentifier>{93D0FCD4-8767-3609-B60E-6E90AEAE5FAC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\base\stl">
+      <UniqueIdentifier>{6134E982-FDD5-312B-B212-3DF36674CA20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\base\string">
+      <UniqueIdentifier>{0F2D256D-1DE9-3005-B5AA-B9635E3C55FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\base\types">
+      <UniqueIdentifier>{614687E8-7E5A-3678-BF8E-2651071CD05D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers">
+      <UniqueIdentifier>{9D016196-BCFA-3C1F-898E-ECE478E99CAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\buffer">
+      <UniqueIdentifier>{017ECCB6-065B-3B33-9653-05E7C2B73A1B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\buffer\test">
+      <UniqueIdentifier>{4F5636A8-51EF-3FE0-ABA1-402538C3878F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\buffer_stack">
+      <UniqueIdentifier>{30A4B388-5D34-3113-BC02-5BBB26807AB1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\buffer_stack\implementation">
+      <UniqueIdentifier>{13CA52C8-AD52-3837-A5B9-ECA0905D2BBE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\buffer_stack\special_types">
+      <UniqueIdentifier>{9AA3B15D-598E-3187-A191-20F237BEA028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\buffer_stack\test">
+      <UniqueIdentifier>{5C544429-F92F-3333-BCA7-81967C6FD4EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\grid">
+      <UniqueIdentifier>{775F9802-7BAB-315D-A11D-0E6C6E92F473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\grid\grid_2D">
+      <UniqueIdentifier>{A832BC70-A9BD-36F7-AE4C-A9E6D1C714BD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\grid\grid_3D">
+      <UniqueIdentifier>{AF206F00-5A3C-3A6F-B266-28CA4E21DF6F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\grid\test">
+      <UniqueIdentifier>{11B83EF8-B679-3FD3-9477-7676D6B35F8A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\grid_stack">
+      <UniqueIdentifier>{D2989321-F6B4-3AA9-858C-DC0EF064888A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\grid_stack\grid_stack_2D">
+      <UniqueIdentifier>{FADABEA4-3F45-3C56-9324-0414C5EAB434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\grid_stack\grid_stack_2D\test">
+      <UniqueIdentifier>{5CC621FA-BD33-3061-8FB9-74614289104B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\containers\offset_grid">
+      <UniqueIdentifier>{94F987C2-898C-3BC4-B04A-86C8E58011D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display">
+      <UniqueIdentifier>{F0E11C6B-9051-352D-B76A-5D362A9D08CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable">
+      <UniqueIdentifier>{729A22D2-C702-3837-BFD9-BAE0D8BA2199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable\curve_drawable">
+      <UniqueIdentifier>{CE4C4000-90E7-3C3B-A720-984E3D95EF05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable\mesh_drawable">
+      <UniqueIdentifier>{D5A59744-37D2-3997-9448-B10B2268BEEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable\mesh_normal_drawable">
+      <UniqueIdentifier>{6E5CB9DC-6A59-3DF6-B6E5-4C5A50D18191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable\mesh_wireframe_drawable">
+      <UniqueIdentifier>{CF084E40-3672-3E5B-BD90-20E7AAC842DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable\segments_drawable">
+      <UniqueIdentifier>{8C2BDD1E-9982-364F-A97A-68FF00157075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable\shading_parameters">
+      <UniqueIdentifier>{5F23E977-E974-3F3A-97FD-C2C8CB0E94FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\drawable\trajectory_drawable">
+      <UniqueIdentifier>{14008C41-8E1F-34F4-8AAA-1FA447A4E7EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\image">
+      <UniqueIdentifier>{0B8183D7-F995-3E14-BA09-3E0774198A05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\opengl">
+      <UniqueIdentifier>{0A1F54F1-E299-3971-AB52-42130B886B41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\opengl\debug">
+      <UniqueIdentifier>{58995C73-0E12-3A64-896D-C5EA64E44F27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\opengl\glad">
+      <UniqueIdentifier>{ECD80C38-58E8-3EB6-8963-9A55793BD42C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\opengl\helper">
+      <UniqueIdentifier>{86BCFF55-6BEC-3415-AD07-083114C4CB3B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\opengl\shaders">
+      <UniqueIdentifier>{9987E7F7-C73F-3A8E-B492-801426F75FF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\opengl\texture">
+      <UniqueIdentifier>{A2589EA4-FD3B-3441-A6E7-1B568A425E02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\opengl\uniform">
+      <UniqueIdentifier>{205EE8DD-E47E-37F5-A40C-0E1BFBF325FF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\display\window">
+      <UniqueIdentifier>{3F6C0DB0-FEEE-355E-9C4E-505EE7E35C54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\files">
+      <UniqueIdentifier>{9321DE79-A5AA-3930-A8B7-97B46FA98084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction">
+      <UniqueIdentifier>{88DD480F-E194-3BD7-9F96-D1F107A2F709}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\camera">
+      <UniqueIdentifier>{348E45FC-D853-3408-A715-B7E6049425E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\camera\camera_around_center">
+      <UniqueIdentifier>{071399E8-F946-3227-B8A1-1963D03E4051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\camera\camera_base">
+      <UniqueIdentifier>{BE5265AA-06B4-3480-BF2A-AA6630BAB572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\camera\camera_head">
+      <UniqueIdentifier>{FEA553D8-5B0F-3960-B6E8-EB53C31F0A18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\camera\camera_spherical_coordinates">
+      <UniqueIdentifier>{BE532446-5CA8-390D-A54D-A92AB8A9D032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\camera\common_functions">
+      <UniqueIdentifier>{03E8FA93-DFA6-3C35-8AFA-FD151D7E653C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\glfw_interaction">
+      <UniqueIdentifier>{FDCE95FF-4A87-3CCE-AC2C-9E9DB21F201C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\gui">
+      <UniqueIdentifier>{83FF18D1-1CE1-323E-B0AE-74968D4A9A6D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\timer">
+      <UniqueIdentifier>{A15114EB-7DFF-33AB-AEB0-B4A7083610FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\timer\timer_basic">
+      <UniqueIdentifier>{75D32EF4-3478-32F0-B442-B13EE83563D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\timer\timer_event_periodic">
+      <UniqueIdentifier>{D72AFB5D-F9C2-308A-963F-EF1FAFE0730B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\timer\timer_fps">
+      <UniqueIdentifier>{05C3FAB4-89D2-384C-8041-443578266BB2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\timer\timer_interval">
+      <UniqueIdentifier>{4BBDE638-535E-3E6A-9204-176205E584B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\tracker">
+      <UniqueIdentifier>{FA8E0F64-CE0C-34F5-BDDD-2E6CA4858D26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\interaction\tracker\velocity_tracker">
+      <UniqueIdentifier>{45CEF244-A82B-3EDB-98BD-BB815FF91FAA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math">
+      <UniqueIdentifier>{DC62DFE4-BD8E-373E-96F7-8A9E539BA170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\affine">
+      <UniqueIdentifier>{A271E8C7-67B2-3F00-AF55-753EFDE97C4D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\affine\affine_rt">
+      <UniqueIdentifier>{F3249F97-245B-3590-A33C-D4B75F67F5FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\affine\affine_rts">
+      <UniqueIdentifier>{6A035B7A-818C-3FE1-AF08-C0D403BDFADA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\frame">
+      <UniqueIdentifier>{CB9FC931-D1D1-3F7A-9042-0DF17BEE9165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\interpolation">
+      <UniqueIdentifier>{C9016BE4-5D61-3CFD-A7F1-EF6C07E8703A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\matrix">
+      <UniqueIdentifier>{C859ACC9-B564-3177-89F1-3241B36B9580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\matrix\matrix_stack">
+      <UniqueIdentifier>{1B8A20F3-9EF8-3DD0-994F-CBD21FE98247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\matrix\matrix_stack\special_types">
+      <UniqueIdentifier>{3B65FCFB-A2B7-3393-966B-68575B505D0F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\matrix\matrix_stack\special_types\definition">
+      <UniqueIdentifier>{25D0A4D1-2E0D-3797-A842-DAED4DE9199C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\matrix\matrix_stack\special_types\mat4">
+      <UniqueIdentifier>{3060BB89-9CD0-3E16-BAC7-C1F485544C2C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\matrix\test">
+      <UniqueIdentifier>{BC70C5DE-8362-3B49-AF50-8580F6DFA7DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\projection">
+      <UniqueIdentifier>{50DF2294-D4FE-30D6-A734-5DBE2677C84C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\quaternion">
+      <UniqueIdentifier>{DC5B5AD0-880D-3406-8D28-EEE05D144988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\rotation">
+      <UniqueIdentifier>{21181A15-2930-3203-8744-8EFAF88DA08D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\rotation\test">
+      <UniqueIdentifier>{D088683C-23CF-3590-AC27-DBF978722903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\vec_mat">
+      <UniqueIdentifier>{A6692787-0473-3602-A2CC-B87574B03FD8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\math\vec_mat\test">
+      <UniqueIdentifier>{445F36DB-67B9-388C-AABF-86769E8E1B32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shaders_preset">
+      <UniqueIdentifier>{CDDC5000-4C26-3647-9925-41E5F1C76425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape">
+      <UniqueIdentifier>{6F335884-E0D8-3BC3-A4FD-347E95764A93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\curve">
+      <UniqueIdentifier>{F0DE4E0C-3CBF-3FEC-A6A8-82DB4A7AA8D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\intersection">
+      <UniqueIdentifier>{6B5C26CC-B56D-3179-BE2F-ADBE687D28C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\mesh">
+      <UniqueIdentifier>{0C16081F-28D4-3DE1-8425-4DF06746D62C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\mesh\loader">
+      <UniqueIdentifier>{36ECC17D-3C55-3BAF-9A89-1F233B4CDAA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\mesh\loader\obj">
+      <UniqueIdentifier>{B372B195-54AF-36CF-8ECA-2CFC0F30868B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\mesh\primitive">
+      <UniqueIdentifier>{78BF120F-DDB7-3CFD-9D73-94C94CFEC4AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\mesh\structure">
+      <UniqueIdentifier>{DAD3F710-7356-3C2F-AC09-912E2317C329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vcl\shape\noise">
+      <UniqueIdentifier>{2EC02738-AF72-396F-B321-299798AAF9B2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

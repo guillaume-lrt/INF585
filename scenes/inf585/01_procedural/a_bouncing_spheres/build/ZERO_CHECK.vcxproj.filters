@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ptitg\Documents\@M1\INF585\inf585_vcl\scenes\inf585\01_procedural\a_bouncing_spheres\build\CMakeFiles\c826f0a1f0344696a9f827680efb96c5\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{386705F8-6DE8-3AA2-AF78-0B7C2C803191}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
