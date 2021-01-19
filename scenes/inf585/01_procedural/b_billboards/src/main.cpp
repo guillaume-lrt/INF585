@@ -45,6 +45,8 @@ struct particle_bubble
 	float t0;
 	vec3 color;
 	float radius;
+	float RotationRadius;   // radius around the center of rotation
+	float offset;   // in [0,2pi] so that the rotation not alwats start at 0
 	//  Add parameters you need to store for the bubbles
 };
 
@@ -52,6 +54,7 @@ struct particle_billboard
 {
 	vec3 p0;
 	float t0;
+	vec3 v0;
 };
 
 
@@ -66,6 +69,8 @@ vec3 compute_bubble_position(particle_bubble const& bubble, float t_current);
 particle_billboard create_new_billboard(float t);
 vec3 compute_billboard_position(particle_billboard const& billboard, float t_current);
 template <typename T> void remove_old_particles(std::vector<T>& particles, float t_current, float t_max);
+
+float compute_billboard_alpha(particle_billboard const& billboard, float t_current);
 
 
 // Visual elements of the scene
@@ -85,6 +90,8 @@ timer_event_periodic timer_bubble(0.15f);
 std::vector<particle_billboard> billboards;
 timer_event_periodic timer_billboard(0.05f);
 
+float x2;
+float y2;
 
 
 
@@ -123,6 +130,8 @@ int main(int, char* argv[])
 		ImGui::Checkbox("Transparent billboard", &user.display_transparent_billboard);
 		ImGui::SliderFloat("Bubble emission rate", &timer_bubble.event_period, 0.01f, 1.0f, "%.2f");
 		ImGui::SliderFloat("Billboard emission rate", &timer_billboard.event_period, 0.005f, 1.0f, "%.3f");
+		ImGui::SliderFloat("Billboard alpha x0", &x2, 0.1f, 3.0f);			// x2 is the half life of the billboard
+		ImGui::SliderFloat("Billboard alpha y0", &y2, 0.1f, 1.0f);			// max alpha value
 
 		if(user.fps_record.event) {
 			std::string const title = "VCL Display - "+str(user.fps_record.fps)+" fps";
@@ -186,7 +195,10 @@ void initialize_data()
 	GLuint const texture_billboard = opengl_texture_to_gpu(image_load_png("assets/smoke.png"));
 	float const L = 0.35f; //size of the quad
 	quad = mesh_drawable(mesh_primitive_quadrangle({-L,-L,0},{L,-L,0},{L,L,0},{-L,L,0}));
+	//std::cout << quad.shading.alpha << std::endl;
 	quad.texture = texture_billboard;
+
+	x2 = 1.8f; y2 = 0.3f;
 }
 
 void display_scene() 
@@ -233,13 +245,16 @@ void display_scene()
 		//  Note : to make the sprite constantly facing the camera set
 		//       quad.transform.rotation = scene.camera.orientation();
 		// ...
-		/* temporary code to remove or adapt */ quad.transform.translate = {0.0, k*0.6, 0.0f};  
+		quad.transform.rotate = scene.camera.orientation();
+		quad.transform.translate = compute_billboard_position(billboards[k], timer_billboard.t);
+		//std::cout << "billboard display: " << compute_billboard_position(billboards[k], timer_billboard.t) << std::endl;
+		quad.shading.alpha = compute_billboard_alpha(billboards[k], timer_billboard.t);
 		draw(quad, scene);
 	}
 	glDepthMask(true);
 		
 	remove_old_particles(bubbles, timer_bubble.t, 3.0f);
-	remove_old_particles(billboards, timer_billboard.t, 3.0f);
+	remove_old_particles(billboards, timer_billboard.t, 5.0f);
 }
 
 
@@ -251,10 +266,12 @@ particle_bubble create_new_bubble(float t)
 
 	float const theta = rand_interval(0.0f, 2*pi);
     float const radius = rand_interval(0.0f, 0.7f);
+	float const dist_to_border = 0.8f - radius;
     bubble.p0     = radius*vec3(std::cos(theta), 0.25, std::sin(theta));
-	bubble.radius = rand_interval(0.03f,0.08f);
+	bubble.radius = rand_interval(0.03f,0.06f);
 	bubble.color  = {0.5f+rand_interval(0,0.2f),0.6f+rand_interval(0,0.2f),1.0f-rand_interval(0,0.2f)};
-	// To be completed ...
+	bubble.offset = rand_interval(0.0f, 2 * pi);
+	bubble.RotationRadius = rand_interval(dist_to_border / 3.f, dist_to_border);
 
 	return bubble;
 }
@@ -262,23 +279,49 @@ vec3 compute_bubble_position(particle_bubble const& bubble, float t_current)
 {
 	float const t = t_current - bubble.t0;
 
-	// To be modified ...
-	return {std::sin(3*t), t, 0.0f};
-
-	
+	vec3 p = { bubble.RotationRadius * std::sin(3*t + bubble.offset), t, bubble.RotationRadius * std::cos(3*t + bubble.offset) };
+	p = p + bubble.p0;
+	return p;
 }
 
 particle_billboard create_new_billboard(float t)
 {
 	particle_billboard billboard;
 	billboard.t0 = t;
-	// To be completed ...
+
+	float const theta = rand_interval(0, 2 * pi);
+	billboard.p0 = { 0,0,0 };
+	billboard.v0 = { .5f * std::sin(theta),.5f,.5f * std::cos(theta)};
+
 	return billboard;
 }
 vec3 compute_billboard_position(particle_billboard const& billboard, float t_current)
 {
-	// To be modified
-	return {0,0,0};
+	vec3 const g = { 0,-0.4f,0 }; // gravity constant
+
+	float t = t_current - billboard.t0;
+
+	vec3 const p = 0.5f * g * t * t + billboard.v0 * t + billboard.p0; // currently only models the first parabola
+
+	return p;
+}
+
+float compute_billboard_alpha(particle_billboard const& billboard, float t_current) {
+	// compute the alpha channel as a parabola defined with x2 and y2 (coordinates of the apex)
+	float t = t_current - billboard.t0;
+	//std::cout << x2 << ", "  << y2 << std::endl;
+	bool parabola = true;
+	if parabola{
+		float const b = 2 * y2 / x2;
+		float const a = -b / (2 * x2);
+		return a * t * t + b * t;
+	}
+	else {
+		float const alpha = t / (2*x2);
+		auto temp = y2*(1 - alpha) * std::sqrt(alpha);
+		return std::max(temp, 0);
+	}
+	return 0.0f;
 }
 
 // Generic function allowing to remove particles with a lifetime greater than t_max

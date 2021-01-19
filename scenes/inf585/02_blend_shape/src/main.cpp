@@ -38,12 +38,14 @@ void display_scene();
 void blend_shapes_sliders(); // Handle the sliders related to the weights of the blend shapes
 void update_blend_shape();   // Update the current visualized face with respect to the new weights
 
-
 buffer<mesh> faces_storage; // Store all initial key-frame faces
 mesh_drawable face;         // Face currently displayed
 mesh_drawable body;         // The static body of the character
 
 buffer<float> weights;                // Blend Shapes weights
+int face_index = 0;
+buffer<vec3> faces_distances[5];
+size_t MeshSize;
 
 
 int main(int, char* argv[])
@@ -135,6 +137,18 @@ void initialize_data()
 	//    faces_storage[0].position[k] - refers to the k-th vertex position of the reference pose
 	//    faces_storage[k_face].position[k] - refers to the k-th vertex of the pose k_face (for k_face>0)
 
+	MeshSize = faces_storage[0].position.size();
+	std::cout << "Size of mesh: " << MeshSize << std::endl;
+
+	faces_distances[0].resize(MeshSize);
+	for (int k = 0; k < 5; k++){
+		faces_distances[k].resize(MeshSize);
+		//#pragma omp parallel for
+		for (int j = 0; j < MeshSize; j++) {
+			//faces_distances[k][j] = norm(faces_storage[k+1].position[j] - faces_storage[0].position[j]);
+			faces_distances[k][j] = faces_storage[k + 1].position[j] - faces_storage[0].position[j];
+		}
+	}
 }
 
 void display_scene() 
@@ -150,6 +164,10 @@ void display_scene()
 void blend_shapes_sliders()
 {
 	// Slider of the GUI
+	bool const face_slider = ImGui::SliderInt("Face Index", &face_index, 0, 5);
+	if (face_slider)
+		face = mesh_drawable(faces_storage[face_index]);
+
 	bool const slider_01 = ImGui::SliderFloat("w1", &weights[0], 0.0f, 1.0f);
 	bool const slider_02 = ImGui::SliderFloat("w2", &weights[1], 0.0f, 1.0f);
 	bool const slider_03 = ImGui::SliderFloat("w3", &weights[2], 0.0f, 1.0f);
@@ -174,10 +192,24 @@ void update_blend_shape()
 	//    - the function normal_per_vertex(...) - can be used to automatically compute new normals
 	//    - If you use buffer, you can use operator + (or +=) between two buffers of same size to add their values. You can also multiply a buffer with a scalar value.
 
-	std::cout<<"Called update_blend_shape with weights values: "<<weights<<std::endl; // line to remove once you have seen its action
+	//std::cout<<"Called update_blend_shape with weights values: "<<weights<<std::endl; // line to remove once you have seen its action
+	buffer<vec3> weighted_distances;
+
+	weighted_distances.resize(MeshSize);
+	for (int k = 0; k < 5; k++) {
+		weighted_distances += weights[k] * faces_distances[k];
+	}
+	buffer<vec3> new_position;
+	new_position.resize(MeshSize);
+	vec3 temp_vec(1.f, 1.f, 1.f);
+	for (int i = 0; i < MeshSize; i++) {	
+		//new_position[i] = faces_storage[0].position[i] + temp_vec * weighted_distances[i];
+		new_position[i] = faces_storage[0].position[i] + weighted_distances[i];
+	}
+	//std::cout << "test2: " << faces_storage[0].position - new_position << std::endl;
+	face.update_position(new_position);
+	face.update_normal(normal_per_vertex(new_position, faces_storage[0].connectivity));
 }
-
-
 
 
 void window_size_callback(GLFWwindow* , int width, int height)
