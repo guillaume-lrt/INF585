@@ -1,6 +1,6 @@
 #include "deformation.hpp"
 
-
+//#include "vcl/math/rotation/rotation.hpp"
 
 using namespace vcl;
 
@@ -23,6 +23,9 @@ void apply_deformation(mesh& shape, // The position of shape are the one to be d
 
 		float const dist = norm( p_clicked - p_shape_original );       // distance between the picked position and the vertex before deformation
 
+		vec3 translation = camera_orientation * vec3(tr, 0.0f);
+		float const wi = std::exp(-(dist * dist) / (r * r));
+
 		// TO DO: Implement the deformation models
 		// **************************************************************** //
 		// ...
@@ -30,21 +33,35 @@ void apply_deformation(mesh& shape, // The position of shape are the one to be d
 		{
 			// Hint: You can convert the 2D translation in screen space into a 3D translation in the view plane in multiplying 
 			//       camera_orientation * (tr.x, tr.y, 0)
-			vec3 const translation = camera_orientation*vec3(tr,0.0f);
+
+			//std::cout << widget.deformer_direction << std::endl;
+			if (widget.deformer_direction == direction_surface_normal)
+				translation = (translation * n_clicked) * n_clicked;
+
 
 			// Fake deformation (linear translation in the screen space) 
 			//   the following lines should be modified to get the expected smooth deformation
-			if (dist < r)
-				p_shape = p_shape_original + (1-dist/r)*translation;
+			p_shape = p_shape_original + wi * translation;
 
 		}
 		if (widget.deformer_type == deform_twist)
 		{
 			// Deformation to implement
+			translation = camera_orientation.matrix_col_z();
+			if (widget.deformer_direction == direction_surface_normal)
+				translation = (translation * n_clicked) * n_clicked;
+			translation = normalize(translation);
+			//std::cout << translation << std::endl;
+			
+			auto R = rotation::axis_angle_to_matrix(translation, wi*tr.x);
+			p_shape = R * (p_shape_original - p_clicked) + p_clicked;
 		}
 		if (widget.deformer_type == deform_scale)
 		{
 			// Deformation to implement"
+			float s = 1 + wi * tr.x;
+			//std::cout << s << std::endl;
+			p_shape = s * (p_shape_original - p_clicked) + p_clicked;
 		}
 
 	}

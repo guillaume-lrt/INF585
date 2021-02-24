@@ -63,7 +63,7 @@ bool require_normal_update;  // indicator if the normals need to be updated
 int main(int, char* argv[])
 {
 
-	std::cout << "Run " << argv[0] << std::endl;
+	std::cout << "Run " << argv[0] << std::endl;	
 	
 	int const width = 1280, height = 1024;
 	GLFWwindow* window = create_window(width, height);
