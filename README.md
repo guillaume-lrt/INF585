@@ -18,7 +18,7 @@ The objective of the library is to be simple as simple as possible to read and u
 The majority of VCL structures and functions are aimed to be minimalistic without hidden states. The code remains fully compatible with direct raw OpenGL calls and user-defined shaders. The animation loop itself is entirely defined by the user.
 
 
-The code contains two main parts:
+The code contains two main parts :
 * The VCL library itself in `library/vcl/` directory - contains the helper functions and structures
 * The pre-made 3D scenes in `scenes/` directory. Each scene is fully defined in its subdirectory and correspond to an independant project and executable.
 
