@@ -1,4 +1,3 @@
-test
 # VCL
 
 - [Introduction](#Introduction)
