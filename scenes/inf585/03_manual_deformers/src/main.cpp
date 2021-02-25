@@ -191,7 +191,8 @@ void create_new_surface()
 		shape = initialize_sphere(); 
 		break;
 	case surface_cube:
-		shape = initialize_cube(); 
+		shape = mesh_primitive_cubic_grid({ 0,0,0 }, { 1,0,0 }, { 1,1,0 }, { 0,1,0 }, { 0,0,1 }, { 1,0,1 }, { 2,2,2 }, { 0,1,1 }, 10, 10, 10);
+		//shape = initialize_cube(); 
 		break;
 	case surface_mesh:
 		shape = initialize_mesh();
