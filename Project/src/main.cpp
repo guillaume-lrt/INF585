@@ -9,8 +9,8 @@ using namespace vcl;
 struct gui_parameters {
 	bool display_frame = true;
 	bool add_sphere = false;
-	bool wireframe = false;
-	bool solid = true;
+	bool wireframe = true;
+	bool solid = false;
 };
 
 struct user_interaction_parameters {
@@ -38,7 +38,7 @@ Scene scene = Scene();
 
 segments_drawable cube_wireframe;
 
-timer_event_periodic timer(0.5f);
+timer_event_periodic timer(1.f);
 std::vector<particle_structure> particles;
 
 void mouse_move_callback(GLFWwindow* window, double xpos, double ypos);
@@ -122,15 +122,15 @@ void emit_particle()
 	static buffer<vec3> const color_lut = {{1,0,0},{0,1,0},{0,0,1},{1,1,0},{1,0,1},{0,1,1}};
 	if (timer.event && user.gui.add_sphere) {
 		float const theta = rand_interval(0, 2*pi);
-		//vec3 const v = vec3(1.0f*std::cos(theta), 1.0f*std::sin(theta), 4.0f);
-		vec3 const v = vec3(1.0f * std::cos(theta), 1.0f * std::sin(theta), 0.0f);
+		vec3 const v = vec3(.3f*std::cos(theta), .3f*std::sin(theta), 0.f);
+		//vec3 const v = vec3(0.f,0.f, 0.0f);
 
 		particle_structure particle;
-		particle.p = {0,0,5};
+		particle.p = {0.1,0,5.2};
 		particle.r = 0.1f;
 		particle.c = color_lut[int(rand_interval()*color_lut.size())];
 		particle.v = v;
-		particle.m = 1.0f; //
+		particle.m = 1.5f; //
 
 		particles.push_back(particle);
 	}
@@ -163,20 +163,32 @@ void initialize_data()
 
 	//scene.cylinders().push_back(&cylinder1);
 
-	Cylinder &cylinder1 = scene.cylinders()[0];
+	Cylinder &c1 = scene.cylinders()[0];
+	c1.p0() = { -0.1,0.,5. };
+	c1.p1() = { 1.,0.,4.5f };
+	c1.is_half = true;
+	c1.update_mesh();
 
-	cylinder1.p0() = { -0.1,0.,5. };
-	cylinder1.p1() = { 1.,0.,4.5f };
-	cylinder1.N_sample_height = 10;
-	cylinder1.N_sample_circ = 15;
-	cylinder1.is_closed = false;
-	cylinder1.radius() = .14f;
-	cylinder1.update_mesh();
+	Cylinder &c2 = scene.cylinders()[1];
+	c2.p0() = { 1.2,0.,4.2 };
+	c2.p1() = { 1.2,0.,2. };
+	c2.update_mesh();
 
-	std::cout << cylinder1.positions().size() << std::endl;
-	for (int i = 0; i < cylinder1.positions().size(); i++) {
-		std::cout << cylinder1.positions()[i] << ", " << cylinder1.normals()[i] << std::endl;
-		//draw(mesh_drawable(mesh_primitive_sphere(0.5f, cylinder1.c_mesh().position[i])), scene);
+	Cylinder& c3 = scene.cylinders()[2];
+	c3.p0() = { 1.3,0.,1.8 };
+	c3.p1() = { 0.,0.,1.5 };
+	c3.is_half = true;
+	c3.update_mesh();
+
+	std::cout << c1.positions().size() << std::endl;
+	for (int i = 0; i < c1.positions().size(); i++) {
+		std::cout << c1.positions()[i] << ", " << c1.normals()[i] << std::endl;
+	}
+
+	Cube cube1 = scene.cubes()[0];
+	std::cout << cube1.positions().size() << std::endl;
+	for (int i = 0; i < cube1.positions().size(); i++) {
+		std::cout << cube1.positions()[i] << ", " << cube1.normals()[i] << std::endl;
 	}
 }
 
@@ -192,30 +204,46 @@ void display_scene()
 
 		draw(sphere, scene_env);
 	}
-	Cylinder c = scene.cylinders()[0];
+	Cylinder c = scene.cylinders()[2];
 
 	auto pos = c.c_mesh().position;
 	for (int i = 0; i < pos.size(); i++) {
+		float t = i / float(pos.size());
 		sphere.transform.translate = pos[i];
 		sphere.transform.scale = 0.008f;
+		vec3 v = t * vec3(1.f, 0.f, 0.f) + (1 - t) * vec3(0.f, 1.f, 0.f);
+		//std::cout << v << std::endl;
+		sphere.shading.color = v;
 		draw(sphere, scene_env);
 	}
 
-	sphere.transform.translate = c.p0();
-	sphere.transform.scale = 0.012f;
-	draw(sphere, scene_env);
-	sphere.transform.translate = c.p1();
-	sphere.transform.scale = 0.012f;
-	draw(sphere, scene_env);
+	//sphere.transform.translate = c.p0();
+	//sphere.transform.scale = 0.012f;
+	//draw(sphere, scene_env);
+	//sphere.transform.translate = c.p1();
+	//sphere.transform.scale = 0.012f;
+	//draw(sphere, scene_env);
 
-	mesh cylinder_mesh = c.c_mesh();
-	mesh_drawable cylinder_mesh_drawable = mesh_drawable(cylinder_mesh);
+	mesh cylinder_mesh;// = c.c_mesh();
+	mesh_drawable cylinder_mesh_drawable; // = mesh_drawable(cylinder_mesh);
 
-	if(user.gui.solid)
-		draw(cylinder_mesh_drawable,scene_env);
+	for (auto& c : scene.cylinders()) {
+		cylinder_mesh = c.c_mesh();
+		cylinder_mesh_drawable = mesh_drawable(cylinder_mesh);
+		if (user.gui.solid)
+			draw(cylinder_mesh_drawable, scene_env);
+
+		if (user.gui.wireframe)
+			draw_wireframe(cylinder_mesh_drawable, scene_env, { 0,0,0 });
+	}
+
+	mesh cube_mesh = scene.cubes()[0].c_mesh();
+	mesh_drawable cube_mesh_drawable = mesh_drawable(cube_mesh);
+	if (user.gui.solid)
+		draw(cube_mesh_drawable, scene_env);
 
 	if (user.gui.wireframe)
-		draw_wireframe(cylinder_mesh_drawable, scene_env, { 0,0,0 });
+		draw_wireframe(cube_mesh_drawable, scene_env, { 0,0,0 });
 }
 
 

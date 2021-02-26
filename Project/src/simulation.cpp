@@ -1,5 +1,46 @@
 #include "simulation.hpp"
 
+float const epsilon = 1e-4f;
+
+void sphere_object(Cylinder c, particle_structure& particle, float alpha, float beta) {
+	int s = c.positions().size();
+	for (size_t i = 0; i < s; i++) {
+		vec3 a = c.positions()[i];
+		vec3 n = c.normals()[i];
+		float const detection = dot(particle.p - a, n);
+		if (detection <= 0)
+			std::cout << "is outside" << std::endl;
+		if (detection <= particle.r - epsilon) {
+			//std::cout << "Collision with ground" << std::endl;
+			vec3 v_perp = dot(particle.v, n) * n;
+			vec3 v_para = particle.v - v_perp;
+			particle.v = alpha * v_para - beta * v_perp;
+			float d = particle.r - detection;		// distance from the plane
+			particle.p = particle.p + d * n;			// position at the exact point of penetration
+			break;
+		}
+	}
+}
+
+void sphere_object(Cube c, particle_structure& particle, float alpha, float beta) {
+	int s = c.positions().size();
+	for (size_t i = 0; i < s; i++) {
+		vec3 a = c.positions()[i];
+		vec3 n = c.normals()[i];
+		float const detection = dot(particle.p - a, n);
+		if (detection <= 0)
+			std::cout << "is outside" << std::endl;
+		if (detection <= particle.r - epsilon) {
+			//std::cout << "Collision with ground" << std::endl;
+			vec3 v_perp = dot(particle.v, n) * n;
+			vec3 v_para = particle.v - v_perp;
+			particle.v = alpha * v_para - beta * v_perp;
+			float d = particle.r - detection;		// distance from the plane
+			particle.p = particle.p + d * n;			// position at the exact point of penetration
+			break;
+		}
+	}
+}
 
 void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_true)
 {
@@ -7,11 +48,10 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 	size_t const N = particles.size();
 	//buffer<vec3> cube_sides = { { 0.,0.,-1. }, { 0.,0.,1. }, { 0.,-1.,0. }, { 0.,1.,0. }, { -1.,0.,0. }, { 1.,0.,0. } };
 	//buffer<vec3> normals = { { 0.,0., 1. }, { 0.,0., -1. }, { 0.,1.,0. }, { 0.,-1.,0. }, { 1.,0.,0. }, { -1.,0.,0. } };
-	Cylinder c1 = scene.cylinders()[0];
-	float const epsilon = 1e-5f;
+	//Cylinder c1 = scene.cylinders()[0];
 	float alpha, beta;
 
-	size_t const N_substep = 4;
+	size_t const N_substep = 5;
 	float const dt = dt_true / N_substep;
 	for (size_t k_substep = 0; k_substep < N_substep; ++k_substep)
 	{
@@ -87,35 +127,35 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 		{
 			particle_structure& particle = particles[k];
 			alpha = 1.f;
-			beta = 1.f;
-			int s = c1.positions().size();
-			vec3 A = c1.p0(); vec3 B = c1.p1();
-			vec3 AB = B - A;
-			vec3 AC = particle.p - A;
-			float proj = dot(AC, AB);
-			float proj_2 = dot(particle.p - B, -AB);
-			//std::cout << proj << ", " << proj_2 << std::endl;
+			beta = .5f;
+			for (auto& c : scene.cylinders()) {
+				
+				vec3 A = c.p0(); vec3 B = c.p1();
+				vec3 AB = B - A;
+				vec3 AC = particle.p - A;
+				float n_AB = norm(AB);
+				float proj = dot(AC, AB) / n_AB; // norm(AC) * cos_angle;
 
-			// TODO ?
-			// Check that ||C - proj|| < radius of cylinder
-			// seems to work well without
-			if ((proj >= 0) && (proj_2 >= 0)) {
-				for (size_t i = 0; i < s; i++) {
-					vec3 a = c1.positions()[i];
-					vec3 n = c1.normals()[i];
-					float const detection = dot(particle.p - a, n);
-					if (detection <= 0)
-						std::cout << "is outside" << std::endl;
-					if (detection <= particle.r - epsilon) {
-						//std::cout << "Collision with ground" << std::endl;
-						vec3 v_perp = dot(particle.v, n) * n;
-						vec3 v_para = particle.v - v_perp;
-						particle.v = alpha * v_para - beta * v_perp;
-						float d = particle.r - detection;		// distance from the plane
-						particle.p = particle.p + d * n;			// position at the exact point of penetration
-						break;
+				vec3 K = A + proj * AB/n_AB;
+
+				float KC = norm(particle.p - K);  // = ||KC||
+
+				//std::cout << proj << ", " << proj_2 << ", " << n_AB << std::endl;
+				//std::cout << K << ", " << K_2 << std::endl << std::endl;
+				if ((proj >= 0) && (proj <= n_AB)) {
+					if (KC < c.radius()) {
+						sphere_object(c, particle, alpha, beta);
 					}
 				}
+			}
+			for (auto& c : scene.cubes()) {
+				bool is_inside = false;
+				auto p = particle.p;
+				auto vertex = c.vertex();
+				if (p.y >= vertex[0].y - epsilon  && p.y <= vertex[1].y + epsilon)			// check the sphere is inside the cube
+					if (p.x >= vertex[0].x -epsilon && p.x <= vertex[3].x + epsilon)
+						if (p.z >= vertex[0].z - epsilon && p.z <= vertex[4].z + epsilon)
+							sphere_object(c, particle, alpha, beta);					
 			}
 		}
 	}
