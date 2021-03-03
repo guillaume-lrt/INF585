@@ -2,7 +2,7 @@
 
 using namespace vcl;
 
-#ifdef SOLUTION
+//#ifdef SOLUTION
 static vec3 spring_force(const vec3& pi, const vec3& pj, float L0, float K)
 {
     vec3 const p = pi-pj;
@@ -12,7 +12,7 @@ static vec3 spring_force(const vec3& pi, const vec3& pj, float L0, float K)
     vec3 const F = -K * (L-L0) * u;
     return F;
 }
-#endif
+//#endif
 
 // Fill value of force applied on each particle
 // - Gravity
@@ -39,7 +39,7 @@ void compute_forces(grid_2D<vec3>& force, grid_2D<vec3> const& position, grid_2D
         force[k] += -mu*m*velocity[k];
 
 
-#ifdef SOLUTION
+//#ifdef SOLUTION
     // Springs
     const int N_neighbors = 2;
 
@@ -78,9 +78,9 @@ void compute_forces(grid_2D<vec3>& force, grid_2D<vec3> const& position, grid_2D
             force[k] += 0*f;
         }
     }
-#else
+//#else
     // TO DO: Add spring forces ...
-#endif
+//#endif
 
 
 }
@@ -103,7 +103,7 @@ void apply_constraints(grid_2D<vec3>& position, grid_2D<vec3>& velocity, std::ma
     for(const auto& constraints : positional_constraints)
         position[constraints.first] = constraints.second;
 
-#ifdef SOLUTION
+//#ifdef SOLUTION
     const size_t N = position.size();
     const float epsilon = 5e-3f;
     for(size_t k=0; k<N; ++k)
@@ -132,9 +132,9 @@ void apply_constraints(grid_2D<vec3>& position, grid_2D<vec3>& velocity, std::ma
             }
         }
     }
-#else
+//#else
     // To do: apply external constraints
-#endif
+//#endif
 }
 
 

@@ -54,8 +54,8 @@ class Cube {
         inline const buffer<vec3>& normals() const { return m_normals; }
         inline buffer<vec3>& normals() { return m_normals; }
 
-        inline const mesh& c_mesh() const { return m_mesh; }
-        inline mesh& c_mesh() { return m_mesh; }
+        inline const mesh& get_mesh() const { return m_mesh; }
+        inline mesh& get_mesh() { return m_mesh; }
 
     private:
         buffer<vec3> m_vertex;
@@ -88,35 +88,33 @@ class Cylinder {
         inline void update_mesh() {
             //N_sample_length = int(m_height / (2 * 3.14f * m_radius) * (N_sample_circ - 1) + 1.5f);
             //N_sample_height = int(m_height * 10 + 2.f);
-            m_mesh = mesh_primitive_cylinder(m_radius, m_p0, m_p1, N_sample_height, N_sample_circ, is_closed);
+            if (is_half)
+                m_mesh = mesh_primitive_half_cylinder(m_radius, m_p0, m_p1, N_sample_height, N_sample_circ, is_closed);
+            else
+                m_mesh = mesh_primitive_cylinder(m_radius, m_p0, m_p1, N_sample_height, N_sample_circ, is_closed);
             m_mesh.compute_normal();
-            buffer<vec3> m_positions_temp = m_mesh.position;
-            buffer<vec3> m_normals_temp = m_mesh.normal;
-            buffer<vec2> uv_temp = {};
-            buffer<vec3> color_temp = {};
-            int N = m_positions_temp.size();
-            m_normals = {}; m_positions = {};
+            m_normals = -m_mesh.normal;
+            m_positions = m_mesh.position;
+            //buffer<vec3> m_positions_temp = m_mesh.position;
+            //buffer<vec3> m_normals_temp = m_mesh.normal;
+            //buffer<vec2> uv_temp = {};
+            //buffer<vec3> color_temp = {};
+            //int N = m_positions_temp.size();
+            //m_normals = {}; m_positions = {};
 
-            for (int i = 0; i < N; i++) {
-                bool is_equal = false;          // check if pos[i] is diff from all other points
-                //for (int j = i + 1; j < N; j++) {
-                //    if (norm(m_positions_temp[i] - m_positions_temp[j]) < 0.001f) {
-                //        is_equal = true;
-                //        break;
-                //    }
-                //}
-                // if (!is_equal) {            // no other similar points
-                if (!is_half) {
-                    m_normals.push_back(-m_normals_temp[i]);
-                    m_positions.push_back(m_positions_temp[i]);
-                }
-                else if (m_normals_temp[i].z <= 0){
-                    m_normals.push_back(-m_normals_temp[i]);
-                    m_positions.push_back(m_positions_temp[i]);
-                    uv_temp.push_back(m_mesh.uv[i]);
-                    color_temp.push_back(m_mesh.color[i]);
-                }
-            }
+            //for (int i = 0; i < N; i++) {
+            //    bool is_equal = false;          // check if pos[i] is diff from all other points
+            //    if (!is_half) {
+            //        m_normals.push_back(-m_normals_temp[i]);
+            //        m_positions.push_back(m_positions_temp[i]);
+            //    }
+            //    else if (m_normals_temp[i].z <= 0){
+            //        m_normals.push_back(-m_normals_temp[i]);
+            //        m_positions.push_back(m_positions_temp[i]);
+            //        uv_temp.push_back(m_mesh.uv[i]);
+            //        color_temp.push_back(m_mesh.color[i]);
+            //    }
+            //}
             //m_mesh.position = m_positions;
             //m_mesh.normal = m_normals;
             //m_mesh.uv = uv_temp;
@@ -138,8 +136,8 @@ class Cylinder {
             m_p1 = m_p0 + v * m_height;
         }
 
-        inline const mesh& c_mesh() const { return m_mesh; }
-        inline mesh& c_mesh() { 
+        inline const mesh& get_mesh() const { return m_mesh; }
+        inline mesh& get_mesh() { 
             if (m_normals.size() == 0)
                 update_mesh();
             return m_mesh; 
@@ -160,6 +158,53 @@ class Cylinder {
         buffer<vec3> m_normals;
 };
 
+class Asset {
+    public:
+        vec3 p0;
+        float scale;
+        float rotation;
+        
+
+        inline Asset(std::string path = "null", vec3 position = { 0.f,0.f,0.f }, float rescale = 0.18f, float angle = pi/2.f): 
+            m_path(path), p0(position), scale(rescale), rotation(angle){}
+        inline ~Asset(){}
+
+        inline void update_mesh() {
+            m_mesh = mesh_load_file_obj(m_path);
+            auto& pos = m_mesh.position;
+            pos *= scale;
+            vec3 n = { 0.f,0.f,1.f };   // assume only rotation around z axis
+            size_t N = pos.size();
+            for (size_t i = 0; i < N;i++)
+                pos[i] = cos(rotation) * pos[i] + sin(rotation) * cross(n, pos[i]) + (1 - cos(rotation))*dot(pos[i], n) * n;
+
+            m_mesh.position += p0;
+
+            m_mesh.compute_normal();
+            m_normals = -m_mesh.normal;
+            m_positions = m_mesh.position;
+        }
+
+        inline const mesh& get_mesh() const { return m_mesh; }
+        inline mesh& get_mesh() {
+            if (m_mesh.position.size() == 0)
+                update_mesh();
+            return m_mesh;
+        }
+
+        inline const buffer<vec3>& positions() const { return m_positions; }
+        inline buffer<vec3>& positions() { return m_positions; }
+
+        inline const buffer<vec3>& normals() const { return m_normals; }
+        inline buffer<vec3>& normals() { return m_normals; }
+
+    private:
+        std::string m_path;
+        mesh m_mesh;
+        buffer<vec3> m_positions;
+        buffer<vec3> m_normals;
+};
+
 class Scene {
     public:
         inline Scene(){
@@ -167,6 +212,9 @@ class Scene {
             m_cubes = {cube1};
             Cylinder c1 = Cylinder(); Cylinder c2 = Cylinder(); Cylinder c3 = Cylinder();
             m_cylinders = {c1,c2,c3};
+
+            Asset c_in_1 = Asset("assets/cylinder_in.obj");
+            m_assets = { c_in_1 };
         }
         inline ~Scene(){}
 
@@ -176,13 +224,19 @@ class Scene {
         inline const buffer<Cylinder>& cylinders() const { return m_cylinders; }
         inline buffer<Cylinder>& cylinders() { return m_cylinders; }
 
+        inline const buffer<Asset>& assets() const { return m_assets; }
+        inline buffer<Asset>& assets() { return m_assets; }
+
     private:
         buffer<Cube> m_cubes;
         buffer<Cylinder> m_cylinders;
+        buffer<Asset> m_assets;
 };
 
 void simulate(Scene scene, std::vector<particle_structure>& particles, float dt);
-void sphere_object(Cylinder c, particle_structure& particle, float alpha, float beta);
-void sphere_object(Cube c, particle_structure& particle, float alpha, float beta);
+template <class T>
+void sphere_object(T c, particle_structure& particle, float alpha, float beta);
+//void sphere_object(Cube c, particle_structure& particle, float alpha, float beta); 
+//void sphere_object(Asset c, particle_structure& particle, float alpha, float beta);
 
 

@@ -2,7 +2,8 @@
 
 float const epsilon = 1e-4f;
 
-void sphere_object(Cylinder c, particle_structure& particle, float alpha, float beta) {
+template <class T>
+void sphere_object(T c, particle_structure& particle, float alpha, float beta) {
 	int s = c.positions().size();
 	for (size_t i = 0; i < s; i++) {
 		vec3 a = c.positions()[i];
@@ -22,25 +23,25 @@ void sphere_object(Cylinder c, particle_structure& particle, float alpha, float 
 	}
 }
 
-void sphere_object(Cube c, particle_structure& particle, float alpha, float beta) {
-	int s = c.positions().size();
-	for (size_t i = 0; i < s; i++) {
-		vec3 a = c.positions()[i];
-		vec3 n = c.normals()[i];
-		float const detection = dot(particle.p - a, n);
-		if (detection <= 0)
-			std::cout << "is outside" << std::endl;
-		if (detection <= particle.r - epsilon) {
-			//std::cout << "Collision with ground" << std::endl;
-			vec3 v_perp = dot(particle.v, n) * n;
-			vec3 v_para = particle.v - v_perp;
-			particle.v = alpha * v_para - beta * v_perp;
-			float d = particle.r - detection;		// distance from the plane
-			particle.p = particle.p + d * n;			// position at the exact point of penetration
-			break;
-		}
-	}
-}
+//void sphere_object(Cube c, particle_structure& particle, float alpha, float beta) {
+//	int s = c.positions().size();
+//	for (size_t i = 0; i < s; i++) {
+//		vec3 a = c.positions()[i];
+//		vec3 n = c.normals()[i];
+//		float const detection = dot(particle.p - a, n);
+//		if (detection <= 0)
+//			std::cout << "is outside" << std::endl;
+//		if (detection <= particle.r - epsilon) {
+//			//std::cout << "Collision with ground" << std::endl;
+//			vec3 v_perp = dot(particle.v, n) * n;
+//			vec3 v_para = particle.v - v_perp;
+//			particle.v = alpha * v_para - beta * v_perp;
+//			float d = particle.r - detection;		// distance from the plane
+//			particle.p = particle.p + d * n;			// position at the exact point of penetration
+//			break;
+//		}
+//	}
+//}
 
 void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_true)
 {
@@ -51,7 +52,7 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 	//Cylinder c1 = scene.cylinders()[0];
 	float alpha, beta;
 
-	size_t const N_substep = 5;
+	size_t const N_substep = 4;
 	float const dt = dt_true / N_substep;
 	for (size_t k_substep = 0; k_substep < N_substep; ++k_substep)
 	{
@@ -127,7 +128,7 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 		{
 			particle_structure& particle = particles[k];
 			alpha = 1.f;
-			beta = .5f;
+			beta = 0.2f;
 			for (auto& c : scene.cylinders()) {
 				
 				vec3 A = c.p0(); vec3 B = c.p1();
@@ -157,6 +158,8 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 						if (p.z >= vertex[0].z - epsilon && p.z <= vertex[4].z + epsilon)
 							sphere_object(c, particle, alpha, beta);					
 			}
+			Asset a = scene.assets()[0];
+			sphere_object(a, particle, alpha, beta);
 		}
 	}
 }
