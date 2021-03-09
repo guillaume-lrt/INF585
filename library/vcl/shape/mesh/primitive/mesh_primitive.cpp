@@ -68,53 +68,6 @@ namespace vcl
 		return shape;
 	}
 
-	mesh mesh_primitive_half_cylinder(float radius, vec3 const& p0, vec3 const& p1, int Nu, int Nv, bool is_closed)
-	{
-		vec3 const p01 = p1 - p0;
-		float const L = norm(p01);
-		assert_vcl(L > 1e-6f, "Cylinder has 0 length");
-
-		vec3 const dir = p01 / L;
-		rotation const R = rotation_between_vector({ 0,0,1 }, dir);
-
-		mesh shape;
-		for (size_t ku = 0; ku < size_t(Nu); ++ku) {
-			for (size_t kv = 0; kv < size_t(Nv); ++kv) {
-				float const u = ku / (Nu - 1.0f);
-				float const v = kv / (Nv - 1.0f);
-
-				//float const theta = 2 * pi * v;
-				float const theta = pi * v + pi/2.f;
-
-				// cylinder oriented along local z-axis
-				vec3 const q = { radius * std::cos(theta), radius * std::sin(theta), L * u };
-
-				// rotate and translate to p1
-				vec3 const p = R * q + p0;
-
-				// normal
-				vec3 const n = R * vec3{ std::cos(theta), std::sin(theta), 0 };
-				// uv
-				vec2 const uv = { u,v };
-
-				shape.position.push_back(p);
-				shape.normal.push_back(n);
-				shape.uv.push_back(uv);
-			}
-		}
-
-		shape.connectivity = connectivity_grid(Nu, Nv);
-
-		if (is_closed) {
-			shape.push_back(mesh_primitive_disc(radius, p0, dir, Nv).flip_connectivity());
-			shape.push_back(mesh_primitive_disc(radius, p1, dir, Nv));
-		}
-
-		shape.fill_empty_field();
-
-		return shape;
-	}
-
 	mesh mesh_primitive_triangle(vec3 const& p0, vec3 const& p1, vec3 const& p2)
 	{
 		vec3 const n = normalize(cross(normalize(p1-p0), normalize(p2-p0)));
@@ -403,7 +356,7 @@ namespace vcl
 		shape.push_back(mesh_primitive_grid(p100, p110, p111, p101, Ny, Nz));
 		shape.push_back(mesh_primitive_grid(p110, p010, p011, p111, Nx, Nz));
 		shape.push_back(mesh_primitive_grid(p010, p000, p001, p011, Ny, Nz));
-		shape.push_back(mesh_primitive_grid(p001, p101, p111, p011, Nx, Ny));
+		//shape.push_back(mesh_primitive_grid(p001, p101, p111, p011, Nx, Ny));
 		shape.push_back(mesh_primitive_grid(p100, p000, p010, p110, Nx, Ny));
 
 		return shape;

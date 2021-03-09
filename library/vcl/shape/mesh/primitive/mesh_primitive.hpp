@@ -16,7 +16,7 @@ namespace vcl
 	* @is_closed: Is the cylinder closed at the two extremities with a disc
 	*/
 	mesh mesh_primitive_cylinder(float radius=0.2f, vec3 const& p0={0,0,0}, vec3 const& p1={0,0,1}, int Nu=10, int Nv=20, bool is_closed=false);
-	mesh mesh_primitive_half_cylinder(float radius = 0.2f, vec3 const& p0 = { 0,0,0 }, vec3 const& p1 = { 0,0,1 }, int Nu = 10, int Nv = 20, bool is_closed = false);
+	//mesh mesh_primitive_half_cylinder(float radius = 0.2f, vec3 const& p0 = { 0,0,0 }, vec3 const& p1 = { 0,0,1 }, int Nu = 10, int Nv = 20, bool is_closed = false);
 
 	mesh mesh_primitive_triangle(vec3 const& p0={0,0,0}, vec3 const& p1={1,0,0}, vec3 const& p2={0,1,0});
 

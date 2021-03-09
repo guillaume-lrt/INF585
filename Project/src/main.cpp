@@ -11,6 +11,7 @@ struct gui_parameters {
 	bool add_sphere = false;
 	bool wireframe = true;
 	bool solid = false;
+	bool show_normals = false;
 };
 
 struct user_interaction_parameters {
@@ -127,10 +128,11 @@ void emit_particle()
 
 		particle_structure particle;
 		particle.p = {0.1,0,5.2};
+		//particle.p = { 1.2,0.,4.2 };
 		particle.r = 0.16f;
 		particle.c = color_lut[int(rand_interval()*color_lut.size())];
 		particle.v = v;
-		particle.m = 1.5f; //
+		particle.m = 7.f; //
 
 		particles.push_back(particle);
 	}
@@ -175,26 +177,38 @@ void initialize_data()
 	c2.update_mesh();
 
 	Cylinder& c3 = scene.cylinders()[2];
-	c3.p0() = { 1.3,0.,1.8 };
-	c3.p1() = { 0.,0.,1.5 };
+	c3.p0() = { .7f,0.,1.7f };
+	//c3.p0() = { .7f,0.,4.9f };
+	c3.p1() = { -0.3,0.,1.4f };
 	c3.is_half = true;
 	c3.update_mesh();
 
 	Asset& c1_in = scene.assets()[0];
+	//c1_in.p0 = { 1.2f,-1.f,4.5f };
 	c1_in.p0 = { 1.2f,0.f,4.5f };
-	//c1_in.rotation = pi / 2.f;
 	c1_in.update_mesh();
 
-	std::cout << c1.positions().size() << std::endl;
-	for (int i = 0; i < c1.positions().size(); i++) {
-		std::cout << c1.positions()[i] << ", " << c1.normals()[i] << std::endl;
-	}
+	Asset& c2_out = scene.assets()[1];
+	c2_out.p0 = { 1.2f,0.f,1.8f };
+	c2_out.update_mesh();
 
-	Cube cube1 = scene.cubes()[0];
-	std::cout << cube1.positions().size() << std::endl;
-	for (int i = 0; i < cube1.positions().size(); i++) {
-		std::cout << cube1.positions()[i] << ", " << cube1.normals()[i] << std::endl;
-	}
+	Asset& spiral_1 = scene.assets()[2];
+	spiral_1.p0 = { -1.5f,-1.45f,1.5f };
+	spiral_1.scale = 1.5f;
+	spiral_1.rotation = -pi / 2.f;
+	spiral_1.flip_normals = false;
+	spiral_1.update_mesh();
+
+	//std::cout << c1.positions().size() << std::endl;
+	//for (int i = 0; i < c1.positions().size(); i++) {
+	//	std::cout << c1.positions()[i] << ", " << c1.normals()[i] << std::endl;
+	//}
+
+	//Cube cube1 = scene.cubes()[0];
+	//std::cout << cube1.positions().size() << std::endl;
+	//for (int i = 0; i < cube1.positions().size(); i++) {
+	//	std::cout << cube1.positions()[i] << ", " << cube1.normals()[i] << std::endl;
+	//}
 }
 
 void display_scene()
@@ -211,16 +225,17 @@ void display_scene()
 	}
 	Cylinder c = scene.cylinders()[2];
 
-	auto pos = c.get_mesh().position;
-	for (int i = 0; i < pos.size(); i++) {
-		float t = i / float(pos.size());
-		sphere.transform.translate = pos[i];
-		sphere.transform.scale = 0.008f;
-		vec3 v = t * vec3(1.f, 0.f, 0.f) + (1 - t) * vec3(0.f, 1.f, 0.f);
-		//std::cout << v << std::endl;
-		sphere.shading.color = v;
-		draw(sphere, scene_env);
-	}
+	// draw color on vertices to debug
+	//auto pos = c.get_mesh().position;
+	//for (int i = 0; i < pos.size(); i++) {
+	//	float t = i / float(pos.size());
+	//	sphere.transform.translate = pos[i];
+	//	sphere.transform.scale = 0.008f;
+	//	vec3 v = t * vec3(1.f, 0.f, 0.f) + (1 - t) * vec3(0.f, 1.f, 0.f);
+	//	//std::cout << v << std::endl;
+	//	sphere.shading.color = v;
+	//	draw(sphere, scene_env);
+	//}
 
 	//sphere.transform.translate = c.p0();
 	//sphere.transform.scale = 0.012f;
@@ -245,17 +260,36 @@ void display_scene()
 	mesh cube_mesh = scene.cubes()[0].get_mesh();
 	mesh_drawable cube_mesh_drawable = mesh_drawable(cube_mesh);
 
-	mesh cylinder_in = scene.assets()[0].get_mesh();
-	mesh_drawable cylinder_in_drawable = mesh_drawable(cylinder_in);
+	for (auto& c : scene.assets()) {
+		cylinder_mesh = c.get_mesh();
+		cylinder_mesh_drawable = mesh_drawable(cylinder_mesh);
+		if (user.gui.solid)
+			draw(cylinder_mesh_drawable, scene_env);
+
+		if (user.gui.wireframe)
+			draw_wireframe(cylinder_mesh_drawable, scene_env, { 0,0,0 });
+	}
+
+	auto faces = scene.assets()[0].faces();
+	auto faces_normal = scene.assets()[0].faces_normal();
+	// show normals
+	if (user.gui.show_normals)
+		for (int i = 0; i < faces.size(); i++) {
+			//auto mm = mesh_primitive_arrow(cyl_pos[i], cyl_pos[i] + cylinder_in.normal[i]/10.f,0.01f,2.f,1.25f);
+			if (norm(faces_normal[i]) > 0.f) {
+				auto mm = mesh_primitive_arrow(faces[i], faces[i] + faces_normal[i] / 10.f, 0.01f, 2.f, 1.25f);
+				//auto mm = mesh_primitive_cylinder(0.05f, cyl_pos[i], cyl_pos[i]+cylinder_in.normal[i]);
+				auto mm_d = mesh_drawable(mm);
+				draw(mm_d, scene_env);
+			}
+		}
 
 	if (user.gui.solid) {
 		draw(cube_mesh_drawable, scene_env);
-		draw(cylinder_in_drawable, scene_env);
 	}
 
 	if (user.gui.wireframe) {
 		draw_wireframe(cube_mesh_drawable, scene_env, { 0,0,0 });
-		draw_wireframe(cylinder_in_drawable, scene_env, { 0,0,0 });
 	}
 	
 	
@@ -267,6 +301,7 @@ void display_interface()
 	ImGui::Checkbox("Frame", &user.gui.display_frame);
 	ImGui::Checkbox("Wireframe", &user.gui.wireframe);
 	ImGui::Checkbox("Solid", &user.gui.solid);
+	ImGui::Checkbox("Show normals", &user.gui.show_normals);
 	ImGui::SliderFloat("Time scale", &timer.scale, 0.05f, 2.0f, "%.2f s");
     ImGui::SliderFloat("Interval create sphere", &timer.event_period, 0.05f, 2.0f, "%.2f s");
     ImGui::Checkbox("Add sphere", &user.gui.add_sphere);

@@ -1,8 +1,14 @@
 #pragma once
 
 #include "vcl/vcl.hpp"
+#include "vcl/shape/mesh/primitive/mesh_primitive.hpp"
 
+float const epsilon = 1e-4f;
 using namespace vcl;
+
+static buffer<uint3> connectivity_grid(size_t Nu, size_t Nv);
+mesh mesh_primitive_half_cylinder(float radius, vec3 const& p0, vec3 const& p1, int Nu, int Nv, bool is_closed);
+mesh mesh_primitive_cubic_grid_without_top(vec3 const& p000, vec3 const& p100, vec3 const& p110, vec3 const& p010, vec3 const& p001, vec3 const& p101, vec3 const& p111, vec3 const& p011, int Nx, int Ny, int Nz);
 
 struct particle_structure
 {
@@ -28,7 +34,7 @@ class Cube {
             vec3 p6 = p2 + p4 - p0;
             is_open = open;
             m_vertex = { p0,p1,p2,p3,p4,p5,p6,p7 };
-            m_mesh = mesh_primitive_cubic_grid(p0, p1, p2, p3, p4, p5, p6, p7, N, N, N);
+            m_mesh = mesh_primitive_cubic_grid_without_top(p0, p1, p2, p3, p4, p5, p6, p7, N, N, N);
             m_mesh.compute_normal();
             //m_positions = m_mesh.position;
             //m_normals = m_mesh.normal;
@@ -163,10 +169,10 @@ class Asset {
         vec3 p0;
         float scale;
         float rotation;
-        
+        bool flip_normals;
 
-        inline Asset(std::string path = "null", vec3 position = { 0.f,0.f,0.f }, float rescale = 0.18f, float angle = pi/2.f): 
-            m_path(path), p0(position), scale(rescale), rotation(angle){}
+        inline Asset(std::string path = "null", vec3 position = { 0.f,0.f,0.f }, float rescale = 0.18f, float angle = pi / 2.f, bool flip = true) :
+            m_path(path), p0(position), scale(rescale), rotation(angle), flip_normals(flip) {}
         inline ~Asset(){}
 
         inline void update_mesh() {
@@ -181,8 +187,21 @@ class Asset {
             m_mesh.position += p0;
 
             m_mesh.compute_normal();
-            m_normals = -m_mesh.normal;
+            if (flip_normals)
+                m_mesh.normal *= -1;
+            m_normals = m_mesh.normal;
             m_positions = m_mesh.position;
+
+            m_faces = {}; m_faces_normal = {}; m_face_vertices = {};
+
+            N = m_mesh.connectivity.size();
+            int a, b, c;
+            for (size_t i = 0; i < N; i++) {
+                a = m_mesh.connectivity[i][0]; b = m_mesh.connectivity[i][1]; c = m_mesh.connectivity[i][2];
+                m_faces.push_back((m_mesh.position[a] + m_mesh.position[b] + m_mesh.position[c]) / 3.f);             // average of all vertices
+                m_faces_normal.push_back((m_mesh.normal[a] + m_mesh.normal[b] + m_mesh.normal[c]) / 3.f);
+                m_face_vertices.push_back({ m_mesh.position[a], m_mesh.position[b], m_mesh.position[c] });
+            }
         }
 
         inline const mesh& get_mesh() const { return m_mesh; }
@@ -198,23 +217,37 @@ class Asset {
         inline const buffer<vec3>& normals() const { return m_normals; }
         inline buffer<vec3>& normals() { return m_normals; }
 
+        inline const buffer<vec3>& faces() const { return m_faces; }
+        inline buffer<vec3>& faces() { return m_faces; }
+
+        inline const buffer<vec3>& faces_normal () const { return m_faces_normal; }
+        inline buffer<vec3>& faces_normal() { return m_faces_normal; }
+
+        inline const buffer<buffer_stack3<vec3>>& faces_vertices() const { return m_face_vertices; }
+        inline buffer<buffer_stack3<vec3>>& faces_vertices() { return m_face_vertices; }
+
     private:
         std::string m_path;
         mesh m_mesh;
         buffer<vec3> m_positions;
         buffer<vec3> m_normals;
+        buffer<vec3> m_faces;
+        buffer<vec3> m_faces_normal;
+        buffer<buffer_stack3<vec3>> m_face_vertices;
 };
 
 class Scene {
     public:
         inline Scene(){
-            Cube cube1 = Cube({ -2.,-1.,0. }, { -2.,1.,0. }, { 0.,-1.,0. }, {-2.,-1.,0.5});
+            Cube cube1 = Cube({ -2.,-2.,0. }, { -2.,1.,0. }, { 0.,-2.,0. }, {-2.,-2,0.5});
             m_cubes = {cube1};
             Cylinder c1 = Cylinder(); Cylinder c2 = Cylinder(); Cylinder c3 = Cylinder();
             m_cylinders = {c1,c2,c3};
 
-            Asset c_in_1 = Asset("assets/cylinder_in.obj");
-            m_assets = { c_in_1 };
+            Asset c1_in= Asset("assets/cylinder_in.obj");
+            Asset c2_out = Asset("assets/cylinder_out.obj");
+            Asset spiral_1 = Asset("assets/spiral_1.obj");
+            m_assets = { c1_in, c2_out, spiral_1 };
         }
         inline ~Scene(){}
 
@@ -236,7 +269,7 @@ class Scene {
 void simulate(Scene scene, std::vector<particle_structure>& particles, float dt);
 template <class T>
 void sphere_object(T c, particle_structure& particle, float alpha, float beta);
-//void sphere_object(Cube c, particle_structure& particle, float alpha, float beta); 
+bool sphere_object(Asset a, particle_structure& particle, float alpha, float beta); 
 //void sphere_object(Asset c, particle_structure& particle, float alpha, float beta);
 
 
