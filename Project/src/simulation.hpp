@@ -5,6 +5,8 @@
 
 float const epsilon = 1e-4f;
 using namespace vcl;
+enum class Type { CYLINDER_IN, CYLINDER_OUT, SPIRAL, CUBE_OUT, CYLINDER_END };
+using namespace std;
 
 static buffer<uint3> connectivity_grid(size_t Nu, size_t Nv);
 mesh mesh_primitive_half_cylinder(float radius, vec3 const& p0, vec3 const& p1, int Nu, int Nv, bool is_closed);
@@ -18,6 +20,8 @@ struct particle_structure
     vcl::vec3 c; // Color
     float r;     // Radius
     float m;     // mass
+
+    int gravity = 1; // -+ 1 to have inverse gravity
 };
 
 class Cube {
@@ -167,28 +171,81 @@ class Cylinder {
 class Asset {
     public:
         vec3 p0;
+        vec3 p_in;          // save the coordinates of in and out points
+        vec3 p_out; 
         float scale;
         float rotation;
         bool flip_normals;
+        Type type;       // if it's a spiral, box...
 
-        inline Asset(std::string path = "null", vec3 position = { 0.f,0.f,0.f }, float rescale = 0.18f, float angle = pi / 2.f, bool flip = true) :
-            m_path(path), p0(position), scale(rescale), rotation(angle), flip_normals(flip) {}
+        inline Asset(std::string path = "null", vec3 position = { 0.f,0.f,0.f }, float rescale = 0.18f, float angle = pi / 2.f, bool flip = false, Type obj_type = Type::CYLINDER_IN) :
+            m_path(path), p0(position), scale(rescale), rotation(angle), flip_normals(flip), type(obj_type) {}
         inline ~Asset(){}
 
         inline void update_mesh() {
             m_mesh = mesh_load_file_obj(m_path);
             auto& pos = m_mesh.position;
-            pos *= scale;
+
+            vec3 p_in_temp;
+            vec3 p_out_temp;
+
+            // relative position of in and out points for each obj
+            switch (type) {
+                case  Type::SPIRAL:
+                    scale = 1.5f;
+                    p_in_temp = { -.95f,1.f,-.05f };
+                    p_out_temp = { 0.f,0.f,-.58f };
+                    break;
+
+                case  Type::CYLINDER_OUT:
+                    p_in_temp = { 0.f,0.f,1.6f };
+                    p_out_temp = { 0.f,2.25f,-.25f };
+                    break;
+
+                case  Type::CYLINDER_IN:
+                    p_in_temp = { 0.f,2.3f,0.05f };
+                    p_out_temp = { 0.f,0.f,-1.60f };
+                    break;
+
+                case  Type::CUBE_OUT:
+                    p_out_temp = { 0.f,2.35f,-.7f };
+                    break;
+
+                case  Type::CYLINDER_END:
+                    p_in_temp = { 0.f,2.3f,0.05f };
+                    p_out_temp = { 0.f,0.f,1.6f };
+                    break;
+            }
+
+            
+
             vec3 n = { 0.f,0.f,1.f };   // assume only rotation around z axis
             size_t N = pos.size();
-            for (size_t i = 0; i < N;i++)
-                pos[i] = cos(rotation) * pos[i] + sin(rotation) * cross(n, pos[i]) + (1 - cos(rotation))*dot(pos[i], n) * n;
+            for (size_t i = 0; i < N; i++)
+                Rotation(pos[i], n, rotation);
+            //pos[i] = cos(rotation) * pos[i] + sin(rotation) * cross(n, pos[i]) + (1 - cos(rotation))*dot(pos[i], n) * n;
+            Rotation(p_in_temp, n, rotation);
+            Rotation(p_out_temp, n, rotation);
 
-            m_mesh.position += p0;
+            pos *= scale;
+            p_in_temp *= scale;
+            p_out_temp *= scale;
+
+            vec3 translation = p0;
+            if (!is_equal(p_in, vec3{ 0.f,0.f,0.f }))
+                translation = p_in - p_in_temp;
+            if (!is_equal(p_out, vec3{ 0.f,0.f,0.f }))
+                translation = p_out - p_out_temp;
+
+            pos += translation;
+            p_in = p_in_temp + translation;
+            p_out = p_out_temp + translation;
+            p0 = translation;
 
             m_mesh.compute_normal();
-            if (flip_normals)
+            if (flip_normals) {
                 m_mesh.normal *= -1;
+            }
             m_normals = m_mesh.normal;
             m_positions = m_mesh.position;
 
@@ -234,20 +291,27 @@ class Asset {
         buffer<vec3> m_faces;
         buffer<vec3> m_faces_normal;
         buffer<buffer_stack3<vec3>> m_face_vertices;
+
+        inline void Rotation(vec3& v, vec3 n, float rotation) {
+            v = cos(rotation) * v + sin(rotation) * cross(n, v) + (1 - cos(rotation)) * dot(v, n) * n;
+        }
 };
 
 class Scene {
     public:
         inline Scene(){
             Cube cube1 = Cube({ -2.,-2.,0. }, { -2.,1.,0. }, { 0.,-2.,0. }, {-2.,-2,0.5});
-            m_cubes = {cube1};
-            Cylinder c1 = Cylinder(); Cylinder c2 = Cylinder(); Cylinder c3 = Cylinder();
-            m_cylinders = {c1,c2,c3};
+            m_cubes = {};
+            Cylinder c1 = Cylinder(); Cylinder c2 = Cylinder(); Cylinder c3 = Cylinder(); Cylinder c4 = Cylinder();
+            m_cylinders = {c1,c2,c3, c4};
 
             Asset c1_in= Asset("assets/cylinder_in.obj");
-            Asset c2_out = Asset("assets/cylinder_out.obj");
+            Asset c2_out = Asset("assets/cylinder_out_ter.obj");
             Asset spiral_1 = Asset("assets/spiral_1.obj");
-            m_assets = { c1_in, c2_out, spiral_1 };
+            Asset cube_out = Asset("assets/box_out_bis.obj");
+            Asset c3_out = Asset("assets/cylinder_out_ter.obj");
+            Asset c4_in_end = Asset("assets/cylinder_in_end.obj");
+            m_assets = { c1_in, c2_out, spiral_1, c3_out, cube_out, c4_in_end };
         }
         inline ~Scene(){}
 

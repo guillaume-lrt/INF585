@@ -42,6 +42,8 @@ segments_drawable cube_wireframe;
 timer_event_periodic timer(1.f);
 std::vector<particle_structure> particles;
 
+//enum { CYLINDER, SPIRAL_IN, SPIRAL_OUT, CUBE_OUT };
+
 void mouse_move_callback(GLFWwindow* window, double xpos, double ypos);
 void window_size_callback(GLFWwindow* window, int width, int height);
 
@@ -127,7 +129,7 @@ void emit_particle()
 		//vec3 const v = vec3(0.f,0.f, 0.0f);
 
 		particle_structure particle;
-		particle.p = {0.1,0,5.2};
+		particle.p = {0.1,0,6.};
 		//particle.p = { 1.2,0.,4.2 };
 		particle.r = 0.16f;
 		particle.c = color_lut[int(rand_interval()*color_lut.size())];
@@ -166,38 +168,67 @@ void initialize_data()
 	//scene.cylinders().push_back(&cylinder1);
 
 	Cylinder &c1 = scene.cylinders()[0];
-	c1.p1() = { -0.1,0.,4.7 };
-	c1.p0() = { .8f,0.,4.5f };
+	c1.p1() = { -0.1,0.,5.8 };
+	c1.p0() = { 4.f,0.,5.2f };
 	c1.is_half = true;
 	c1.update_mesh();
 
-	Cylinder &c2 = scene.cylinders()[1];
-	c2.p0() = { 1.2,0.,4.2 };
-	c2.p1() = { 1.2,0.,2. };
+	Asset& c1_in = scene.assets()[0];
+	c1_in.p_in = c1.p0();
+	c1_in.flip_normals = true;
+	c1_in.type = Type::CYLINDER_IN;
+	c1_in.update_mesh();
+
+	Cylinder& c2 = scene.cylinders()[1];
+	c2.p0() = c1_in.p_out;
+	c2.p1() = c2.p0();
+	c2.p1().z = 3.;
 	c2.update_mesh();
 
+	Asset& c2_out = scene.assets()[1];
+	c2_out.p_in = c2.p1();
+	c2_out.type = Type::CYLINDER_OUT;
+	c2_out.update_mesh();
+
 	Cylinder& c3 = scene.cylinders()[2];
-	c3.p0() = { .7f,0.,1.7f };
-	//c3.p0() = { .7f,0.,4.9f };
-	c3.p1() = { -0.3,0.,1.4f };
+	c3.p0() = c2_out.p_out;
+
+	c3.p1() = c3.p0();
+	c3.p1() += {-2.f, 0.f, -0.4f};
 	c3.is_half = true;
 	c3.update_mesh();
 
-	Asset& c1_in = scene.assets()[0];
-	//c1_in.p0 = { 1.2f,-1.f,4.5f };
-	c1_in.p0 = { 1.2f,0.f,4.5f };
-	c1_in.update_mesh();
-
-	Asset& c2_out = scene.assets()[1];
-	c2_out.p0 = { 1.2f,0.f,1.8f };
-	c2_out.update_mesh();
-
 	Asset& spiral_1 = scene.assets()[2];
-	spiral_1.p0 = { -1.5f,-1.45f,1.5f };
-	spiral_1.scale = 1.5f;
+	spiral_1.p_in = c3.p1();
 	spiral_1.rotation = -pi / 2.f;
-	spiral_1.flip_normals = false;
+	spiral_1.type = Type::SPIRAL;
 	spiral_1.update_mesh();
+
+	Asset& c3_out = scene.assets()[3];
+	c3_out.p_in = spiral_1.p_out;
+	c3_out.type = Type::CYLINDER_OUT;
+	c3_out.rotation = 0.f;
+	c3_out.update_mesh();
+
+	Asset& cube_out = scene.assets()[4];
+	cube_out.rotation = pi / 2.f;
+	cube_out.p0.x = 1.f;
+	cube_out.p0.z += -1.f;
+	cube_out.type = Type::CUBE_OUT;
+	cube_out.update_mesh();
+
+	Cylinder& c4 = scene.cylinders()[3];
+	c4.p0() = cube_out.p_out;
+	c4.p1() = c4.p0();
+	c4.p1() += {-2.f, 0.f, -0.4f};
+	c4.is_half = true;
+	c4.update_mesh();
+
+	Asset& c4_end = scene.assets()[5];
+	c4_end.p_in = c4.p1();
+	c4_end.type = Type::CYLINDER_END;
+	c4_end.rotation = -pi/2.f;
+	c4_end.update_mesh();
 
 	//std::cout << c1.positions().size() << std::endl;
 	//for (int i = 0; i < c1.positions().size(); i++) {
@@ -223,9 +254,16 @@ void display_scene()
 
 		draw(sphere, scene_env);
 	}
-	Cylinder c = scene.cylinders()[2];
+	
+	//sphere.transform.translate = scene.assets()[5].p_in;
+	//sphere.transform.scale = .1f;
+	//draw(sphere, scene_env);
+	//sphere.transform.translate = scene.assets()[5].p_out;
+	//sphere.transform.scale = .1f;
+	//draw(sphere, scene_env);
 
 	// draw color on vertices to debug
+	//Cylinder c = scene.cylinders()[2];
 	//auto pos = c.get_mesh().position;
 	//for (int i = 0; i < pos.size(); i++) {
 	//	float t = i / float(pos.size());
@@ -257,8 +295,14 @@ void display_scene()
 			draw_wireframe(cylinder_mesh_drawable, scene_env, { 0,0,0 });
 	}
 
-	mesh cube_mesh = scene.cubes()[0].get_mesh();
-	mesh_drawable cube_mesh_drawable = mesh_drawable(cube_mesh);
+	//mesh cube_mesh = scene.cubes()[0].get_mesh();
+	//mesh_drawable cube_mesh_drawable = mesh_drawable(cube_mesh);
+	//if (user.gui.solid) {
+	//	draw(cube_mesh_drawable, scene_env);
+	//}
+	//if (user.gui.wireframe) {
+	//	draw_wireframe(cube_mesh_drawable, scene_env, { 0,0,0 });
+	//}
 
 	for (auto& c : scene.assets()) {
 		cylinder_mesh = c.get_mesh();
@@ -270,8 +314,8 @@ void display_scene()
 			draw_wireframe(cylinder_mesh_drawable, scene_env, { 0,0,0 });
 	}
 
-	auto faces = scene.assets()[0].faces();
-	auto faces_normal = scene.assets()[0].faces_normal();
+	auto faces = scene.assets()[4].faces();
+	auto faces_normal = scene.assets()[4].faces_normal();
 	// show normals
 	if (user.gui.show_normals)
 		for (int i = 0; i < faces.size(); i++) {
@@ -282,17 +326,7 @@ void display_scene()
 				auto mm_d = mesh_drawable(mm);
 				draw(mm_d, scene_env);
 			}
-		}
-
-	if (user.gui.solid) {
-		draw(cube_mesh_drawable, scene_env);
-	}
-
-	if (user.gui.wireframe) {
-		draw_wireframe(cube_mesh_drawable, scene_env, { 0,0,0 });
-	}
-	
-	
+		}	
 }
 
 
@@ -303,7 +337,7 @@ void display_interface()
 	ImGui::Checkbox("Solid", &user.gui.solid);
 	ImGui::Checkbox("Show normals", &user.gui.show_normals);
 	ImGui::SliderFloat("Time scale", &timer.scale, 0.05f, 2.0f, "%.2f s");
-    ImGui::SliderFloat("Interval create sphere", &timer.event_period, 0.05f, 2.0f, "%.2f s");
+    ImGui::SliderFloat("Interval create sphere", &timer.event_period, 0.05f, 5.0f, "%.2f s");
     ImGui::Checkbox("Add sphere", &user.gui.add_sphere);
 }
 

@@ -1,5 +1,4 @@
 #include "simulation.hpp"
-using namespace std;
 
 static buffer<uint3> connectivity_grid(size_t Nu, size_t Nv)
 {
@@ -102,7 +101,8 @@ void sphere_object(T c, particle_structure& particle, float alpha, float beta) {
 
 bool sphere_object(Asset ass, particle_structure& particle, float alpha, float beta) {
 	int s = ass.faces().size();
-	for (size_t i = 0; i < s; i++) {
+	//#pragma omp parallel for
+	for (int i = 0; i < s; i++) {
 		vec3 a = ass.faces()[i];
 		vec3 n = ass.faces_normal()[i];
 		float const detection = dot(particle.p - a, n);
@@ -154,7 +154,7 @@ bool sphere_object(Asset ass, particle_structure& particle, float alpha, float b
 
 void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_true)
 {
-	vec3 const g = {0,0,-9.81f};
+	vec3 g = {0,0,-9.81f};
 	size_t const N = particles.size();
 	//buffer<vec3> cube_sides = { { 0.,0.,-1. }, { 0.,0.,1. }, { 0.,-1.,0. }, { 0.,1.,0. }, { -1.,0.,0. }, { 1.,0.,0. } };
 	//buffer<vec3> normals = { { 0.,0., 1. }, { 0.,0., -1. }, { 0.,1.,0. }, { 0.,-1.,0. }, { 1.,0.,0. }, { -1.,0.,0. } };
@@ -166,14 +166,22 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 	for (size_t k_substep = 0; k_substep < N_substep; ++k_substep)
 	{
 		size_t const N = particles.size();
-		for (size_t k = 0; k < N; ++k)
+		for (int k = 0; k < N; ++k)
 		{
 			particle_structure& particle = particles[k];
+			auto p = particle.p;
 
-			vec3 const f = particle.m * g;
+			if (particle.gravity == 1)
+				if (-2.f < p.x && p.x < -1.7f)
+					if (-0.3f < p.y && p.y < 0.3f)
+						if (-1.7f < p.z && p.z < -1.f)
+							particle.gravity = -1;
+
+			vec3 const f = particle.m * particle.gravity * g;
 
 			particle.v = (1 - 0.9f * dt) * particle.v + dt * f;
 			particle.p = particle.p + dt * particle.v;
+
 		}
 
 		// collision between spheres
@@ -234,7 +242,7 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 		}
 
 		// collision sphere plane
-		#pragma omp parallel for
+		//#pragma omp parallel for
 		for (int k = 0; k < N; ++k)
 		{
 			particle_structure& particle = particles[k];
@@ -284,6 +292,7 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 				}
 				if (!is_intersection) {
 					int count = 0;
+					//cout << particle.p << endl;
 					for (auto& a : scene.assets()) {
 						//Asset a = scene.assets()[0];
 						count++;
