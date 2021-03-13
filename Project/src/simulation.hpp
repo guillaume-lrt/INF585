@@ -83,7 +83,7 @@ class Cylinder {
         bool is_half;
 
         inline Cylinder(float radius = .2f, vec3 p0 = { 0.,0.,0. }, vec3 p1 = { 1.,1.,1. },
-                        int Sample_height = 3, int Sample_circ = 20, bool closed = false, bool half = false) : 
+                        int Sample_height = 2, int Sample_circ = 15, bool closed = false, bool half = false) : 
                         m_radius(radius), m_p0(p0), m_p1(p1), N_sample_height(Sample_height), N_sample_circ(Sample_circ), is_closed(closed), is_half(half){
             m_height = norm(p1 - p0);
             m_normals = {}; m_positions = {};
@@ -99,7 +99,7 @@ class Cylinder {
             //N_sample_length = int(m_height / (2 * 3.14f * m_radius) * (N_sample_circ - 1) + 1.5f);
             //N_sample_height = int(m_height * 10 + 2.f);
             if (is_half)
-                m_mesh = mesh_primitive_half_cylinder(m_radius, m_p0, m_p1, N_sample_height, N_sample_circ, is_closed);
+                m_mesh = mesh_primitive_half_cylinder(m_radius, m_p0, m_p1, N_sample_height, int(N_sample_circ/2.f), is_closed);
             else
                 m_mesh = mesh_primitive_cylinder(m_radius, m_p0, m_p1, N_sample_height, N_sample_circ, is_closed);
             m_mesh.compute_normal();
@@ -175,11 +175,10 @@ class Asset {
         vec3 p_out; 
         float scale;
         float rotation;
-        bool flip_normals;
         Type type;       // if it's a spiral, box...
 
         inline Asset(std::string path = "null", vec3 position = { 0.f,0.f,0.f }, float rescale = 0.18f, float angle = pi / 2.f, bool flip = false, Type obj_type = Type::CYLINDER_IN) :
-            m_path(path), p0(position), scale(rescale), rotation(angle), flip_normals(flip), type(obj_type) {}
+            m_path(path), p0(position), scale(rescale), rotation(angle), type(obj_type) {}
         inline ~Asset(){}
 
         inline void update_mesh() {
@@ -243,9 +242,6 @@ class Asset {
             p0 = translation;
 
             m_mesh.compute_normal();
-            if (flip_normals) {
-                m_mesh.normal *= -1;
-            }
             m_normals = m_mesh.normal;
             m_positions = m_mesh.position;
 
@@ -301,15 +297,17 @@ class Scene {
     public:
         inline Scene(){
             Cube cube1 = Cube({ -2.,-2.,0. }, { -2.,1.,0. }, { 0.,-2.,0. }, {-2.,-2,0.5});
-            m_cubes = {};
+            Cube cube2 = Cube({ -30.f,-30.f,-30.f }, { -30.f,30.f,-30.f }, { 30.f,-30.f,-30.f }, { -30.f,-30.f,30.f });
+            m_cubes = {cube2};
             Cylinder c1 = Cylinder(); Cylinder c2 = Cylinder(); Cylinder c3 = Cylinder(); Cylinder c4 = Cylinder();
-            m_cylinders = {c1,c2,c3, c4};
+            Cylinder c5 = Cylinder(); Cylinder c6 = Cylinder();
+            m_cylinders = {c1,c2,c3, c4, c5, c6};
 
-            Asset c1_in= Asset("assets/cylinder_in.obj");
-            Asset c2_out = Asset("assets/cylinder_out_ter.obj");
-            Asset spiral_1 = Asset("assets/spiral_1.obj");
-            Asset cube_out = Asset("assets/box_out_bis.obj");
-            Asset c3_out = Asset("assets/cylinder_out_ter.obj");
+            Asset c1_in= Asset("assets/cylinder_in_clean.obj");
+            Asset c2_out = Asset("assets/cylinder_out_clean.obj");
+            Asset spiral_1 = Asset("assets/spiral_smooth_bis.obj");
+            Asset cube_out = Asset("assets/box_out_clean.obj");
+            Asset c3_out = Asset("assets/cylinder_out_clean.obj");
             Asset c4_in_end = Asset("assets/cylinder_in_end.obj");
             m_assets = { c1_in, c2_out, spiral_1, c3_out, cube_out, c4_in_end };
         }

@@ -9,8 +9,8 @@ using namespace vcl;
 struct gui_parameters {
 	bool display_frame = true;
 	bool add_sphere = false;
-	bool wireframe = true;
-	bool solid = false;
+	bool wireframe = false;
+	bool solid = true;
 	bool show_normals = false;
 };
 
@@ -77,10 +77,11 @@ int main(int, char* argv[])
 	glEnable(GL_DEPTH_TEST);
 	while (!glfwWindowShouldClose(window))
 	{
-		scene_env.light = scene_env.camera.position();
+		//scene_env.light = scene_env.camera.position();
+		scene_env.light = { 10.f,10.f,10.f };
 		user.fps_record.update();
 		timer.update();
-		
+		//cout << scene_env.camera.center_of_rotation << ", " << scene_env.camera.distance_to_center << endl;
 		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClear(GL_DEPTH_BUFFER_BIT);
@@ -153,8 +154,8 @@ void initialize_data()
 	
 	user.global_frame = mesh_drawable(mesh_primitive_frame());
 	user.gui.display_frame = true;
-	scene_env.camera.distance_to_center = 10.f;
-	scene_env.camera.look_at({4*2,3*2,2*2}, {0,0,0}, {0,0,1});
+	scene_env.camera.distance_to_center = 13.147f;
+	scene_env.camera.look_at({1.25f,8.2f,10.2f}, {0.78f,-1.46f,1.4f}, {0,0,1});
 
 	sphere = mesh_drawable(mesh_primitive_sphere());
 	
@@ -168,14 +169,13 @@ void initialize_data()
 	//scene.cylinders().push_back(&cylinder1);
 
 	Cylinder &c1 = scene.cylinders()[0];
-	c1.p1() = { -0.1,0.,5.8 };
+	c1.p1() = { -1.6,0.,5.9f };
 	c1.p0() = { 4.f,0.,5.2f };
 	c1.is_half = true;
 	c1.update_mesh();
 
 	Asset& c1_in = scene.assets()[0];
 	c1_in.p_in = c1.p0();
-	c1_in.flip_normals = true;
 	c1_in.type = Type::CYLINDER_IN;
 	c1_in.update_mesh();
 
@@ -229,6 +229,20 @@ void initialize_data()
 	c4_end.type = Type::CYLINDER_END;
 	c4_end.rotation = -pi/2.f;
 	c4_end.update_mesh();
+
+	Cylinder& c5 = scene.cylinders()[4];
+	c5.p0() = c4_end.p_out;
+	c5.p1() = c5.p0();
+	c5.p1().z = 5.8f;
+	c5.update_mesh();
+
+	Cylinder& c6 = scene.cylinders()[5];
+	c6.p1() = { -.5f,0.,6.1f };
+	c6.p0() = { -2.2f,0.,6.f };
+	c6.N_sample_height = 4;
+	c6.N_sample_circ = 30;
+	c6.is_half = true;
+	c6.update_mesh();
 
 	//std::cout << c1.positions().size() << std::endl;
 	//for (int i = 0; i < c1.positions().size(); i++) {
@@ -295,14 +309,14 @@ void display_scene()
 			draw_wireframe(cylinder_mesh_drawable, scene_env, { 0,0,0 });
 	}
 
-	//mesh cube_mesh = scene.cubes()[0].get_mesh();
-	//mesh_drawable cube_mesh_drawable = mesh_drawable(cube_mesh);
-	//if (user.gui.solid) {
-	//	draw(cube_mesh_drawable, scene_env);
-	//}
-	//if (user.gui.wireframe) {
-	//	draw_wireframe(cube_mesh_drawable, scene_env, { 0,0,0 });
-	//}
+	mesh cube_mesh = scene.cubes()[0].get_mesh();
+	mesh_drawable cube_mesh_drawable = mesh_drawable(cube_mesh);
+	if (user.gui.solid) {
+		draw(cube_mesh_drawable, scene_env);
+	}
+	if (user.gui.wireframe) {
+		draw_wireframe(cube_mesh_drawable, scene_env, { 0,0,0 });
+	}
 
 	for (auto& c : scene.assets()) {
 		cylinder_mesh = c.get_mesh();
@@ -314,8 +328,8 @@ void display_scene()
 			draw_wireframe(cylinder_mesh_drawable, scene_env, { 0,0,0 });
 	}
 
-	auto faces = scene.assets()[4].faces();
-	auto faces_normal = scene.assets()[4].faces_normal();
+	auto faces = scene.assets()[2].faces();
+	auto faces_normal = scene.assets()[2].faces_normal();
 	// show normals
 	if (user.gui.show_normals)
 		for (int i = 0; i < faces.size(); i++) {

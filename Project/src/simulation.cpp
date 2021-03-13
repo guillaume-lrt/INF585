@@ -174,8 +174,16 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 			if (particle.gravity == 1)
 				if (-2.f < p.x && p.x < -1.7f)
 					if (-0.3f < p.y && p.y < 0.3f)
-						if (-1.7f < p.z && p.z < -1.f)
+						if (-1.7f < p.z && p.z < -1.f){
 							particle.gravity = -1;
+						}
+
+			if (particle.gravity != 1)
+				if (-1.2f < p.x && p.x < -0.8f)
+					if (-0.3f < p.y && p.y < 0.3f)
+						if (6.f < p.z && p.z < 6.2f) {
+							particle.gravity = 1;
+						}
 
 			vec3 const f = particle.m * particle.gravity * g;
 
@@ -248,12 +256,15 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 			particle_structure& particle = particles[k];
 			alpha = 1.f;
 			beta = 0.2f;
+			if (particle.gravity != 1)
+				beta = 0.f;
 			bool is_intersection = false;
 			//if (k_substep == 0)
 			//std::cout << particle.p << std::endl;
 
 			if (norm(particle.v) > 0.2f || k_substep == 0) {
 				//cout << norm(particle.v) << ", " << epsilon << endl;
+				//cout << particle.p << endl;
 				for (auto& c : scene.cylinders()) {
 
 					vec3 A = c.p0(); vec3 B = c.p1();
@@ -276,26 +287,25 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 						}
 					}
 				}
+				//if (!is_intersection) {
+				//	for (auto& c : scene.cubes()) {
+				//		bool is_inside = false;
+				//		auto p = particle.p;
+				//		auto vertex = c.vertex();
+				//		if (p.y >= vertex[0].y - epsilon && p.y <= vertex[1].y + epsilon)			// check the sphere is inside the cube
+				//			if (p.x >= vertex[0].x - epsilon && p.x <= vertex[3].x + epsilon)
+				//				if (p.z >= vertex[0].z - epsilon && p.z <= vertex[4].z + epsilon) {
+				//					sphere_object(c, particle, alpha, beta);
+				//					is_intersection = true;
+				//					break;
+				//				}
+				//	}
+				//}
 				if (!is_intersection) {
-					for (auto& c : scene.cubes()) {
-						bool is_inside = false;
-						auto p = particle.p;
-						auto vertex = c.vertex();
-						if (p.y >= vertex[0].y - epsilon && p.y <= vertex[1].y + epsilon)			// check the sphere is inside the cube
-							if (p.x >= vertex[0].x - epsilon && p.x <= vertex[3].x + epsilon)
-								if (p.z >= vertex[0].z - epsilon && p.z <= vertex[4].z + epsilon) {
-									sphere_object(c, particle, alpha, beta);
-									is_intersection = true;
-									break;
-								}
-					}
-				}
-				if (!is_intersection) {
-					int count = 0;
-					//cout << particle.p << endl;
+					//int count = 0;
 					for (auto& a : scene.assets()) {
 						//Asset a = scene.assets()[0];
-						count++;
+						//count++;
 						if (sphere_object(a, particle, alpha, beta))   // found an intersection
 							//cout << count << endl;
 							break;
