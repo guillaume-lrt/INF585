@@ -92,7 +92,7 @@ void sphere_object(T c, particle_structure& particle, float alpha, float beta) {
 			vec3 v_perp = dot(particle.v, n) * n;
 			vec3 v_para = particle.v - v_perp;
 			particle.v = alpha * v_para - beta * v_perp;
-			float d = particle.r - detection;		// distance from the plane
+			float d = particle.r - detection;			// distance from the plane
 			particle.p = particle.p + d * n;			// position at the exact point of penetration
 			break;
 		}
@@ -106,8 +106,6 @@ bool sphere_object(Asset ass, particle_structure& particle, float alpha, float b
 		vec3 a = ass.faces()[i];
 		vec3 n = ass.faces_normal()[i];
 		float const detection = dot(particle.p - a, n);
-		//if (detection <= 0)
-			//std::cout << "is outside" << std::endl;
 		if (-epsilon <= detection && detection <= particle.r - epsilon) {
 			float d = particle.r - detection;		// distance from the plane
 			vec3 P = particle.p + d * n;			// position at the exact point of penetration
@@ -116,10 +114,6 @@ bool sphere_object(Asset ass, particle_structure& particle, float alpha, float b
 			vec3 A = ass.faces_vertices()[i][0];
 			vec3 C = ass.faces_vertices()[i][2];
 			vec3 B = ass.faces_vertices()[i][1];
-			//vec3 A = { 0.f,0.f,0.f };
-			//vec3 B = { 0.f,1.f,0.f };
-			//vec3 C = { 0.f,0.f,1.f };
-			//vec3 P = { -5.f,-.3f,.3f };
 			vec3 v0 = C - A;
 			vec3 v1 = B - A;
 			vec3 v2 = P - A;
@@ -139,12 +133,10 @@ bool sphere_object(Asset ass, particle_structure& particle, float alpha, float b
 			// Check if point is in triangle
 			//cout << "is in triangle with u = " << u << "and v = " << v << endl;
 			if ((u >= 0) && (v >= 0) && (u + v <= 1)) {
-				//cout << -epsilon << ", " << detection << endl;
 				particle.p = P;
 				vec3 v_perp = dot(particle.v, n) * n;
 				vec3 v_para = particle.v - v_perp;
 				particle.v = alpha * v_para - beta * v_perp;
-				//break;
 				return true;
 			}
 		}
@@ -156,9 +148,6 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 {
 	vec3 g = {0,0,-9.81f};
 	size_t const N = particles.size();
-	//buffer<vec3> cube_sides = { { 0.,0.,-1. }, { 0.,0.,1. }, { 0.,-1.,0. }, { 0.,1.,0. }, { -1.,0.,0. }, { 1.,0.,0. } };
-	//buffer<vec3> normals = { { 0.,0., 1. }, { 0.,0., -1. }, { 0.,1.,0. }, { 0.,-1.,0. }, { 1.,0.,0. }, { -1.,0.,0. } };
-	//Cylinder c1 = scene.cylinders()[0];
 	float alpha, beta;
 
 	size_t const N_substep = 10;
@@ -259,12 +248,8 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 			if (particle.gravity != 1)
 				beta = 0.f;
 			bool is_intersection = false;
-			//if (k_substep == 0)
-			//std::cout << particle.p << std::endl;
 
-			if (norm(particle.v) > 0.2f || k_substep == 0) {
-				//cout << norm(particle.v) << ", " << epsilon << endl;
-				//cout << particle.p << endl;
+			if (norm(particle.v) > 0.2f || k_substep == 0) {			// don't care about non moving spheres
 				for (auto& c : scene.cylinders()) {
 
 					vec3 A = c.p0(); vec3 B = c.p1();
@@ -277,8 +262,6 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 
 					float KC = norm(particle.p - K);  // = ||KC||
 
-					//std::cout << proj << ", " << proj_2 << ", " << n_AB << std::endl;
-					//std::cout << K << ", " << K_2 << std::endl << std::endl;
 					if ((proj >= 0) && (proj <= n_AB)) {
 						if (KC < c.radius()) {
 							sphere_object(c, particle, alpha, beta);
@@ -302,12 +285,8 @@ void simulate(Scene scene, std::vector<particle_structure>& particles, float dt_
 				//	}
 				//}
 				if (!is_intersection) {
-					//int count = 0;
 					for (auto& a : scene.assets()) {
-						//Asset a = scene.assets()[0];
-						//count++;
 						if (sphere_object(a, particle, alpha, beta))   // found an intersection
-							//cout << count << endl;
 							break;
 					}
 				}

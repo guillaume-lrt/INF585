@@ -158,15 +158,6 @@ void initialize_data()
 	scene_env.camera.look_at({1.25f,8.2f,10.2f}, {0.78f,-1.46f,1.4f}, {0,0,1});
 
 	sphere = mesh_drawable(mesh_primitive_sphere());
-	
-	// Edges of the containing cube
-	//  Note: this data structure is set for display purpose - don't use it to compute some information on the cube - it would be un-necessarily complex
-	//buffer<vec3> cube_wireframe_data = {{-1,-1,-1},{1,-1,-1}, {1,-1,-1},{1,1,-1}, {1,1,-1},{-1,1,-1}, {-1,1,-1},{-1,-1,-1},
-	//	{-1,-1,1} ,{1,-1,1},  {1,-1,1}, {1,1,1},  {1,1,1}, {-1,1,1},  {-1,1,1}, {-1,-1,1},
-	//	{-1,-1,-1},{-1,-1,1}, {1,-1,-1},{1,-1,1}, {1,1,-1},{1,1,1},   {-1,1,-1},{-1,1,1}};
-	//cube_wireframe = segments_drawable(cube_wireframe_data);
-
-	//scene.cylinders().push_back(&cylinder1);
 
 	Cylinder &c1 = scene.cylinders()[0];
 	c1.p1() = { -1.6,0.,5.9f };
@@ -243,17 +234,6 @@ void initialize_data()
 	c6.N_sample_circ = 30;
 	c6.is_half = true;
 	c6.update_mesh();
-
-	//std::cout << c1.positions().size() << std::endl;
-	//for (int i = 0; i < c1.positions().size(); i++) {
-	//	std::cout << c1.positions()[i] << ", " << c1.normals()[i] << std::endl;
-	//}
-
-	//Cube cube1 = scene.cubes()[0];
-	//std::cout << cube1.positions().size() << std::endl;
-	//for (int i = 0; i < cube1.positions().size(); i++) {
-	//	std::cout << cube1.positions()[i] << ", " << cube1.normals()[i] << std::endl;
-	//}
 }
 
 void display_scene()
@@ -277,7 +257,7 @@ void display_scene()
 	//draw(sphere, scene_env);
 
 	// draw color on vertices to debug
-	//Cylinder c = scene.cylinders()[2];
+	Cylinder c = scene.cylinders()[2];
 	//auto pos = c.get_mesh().position;
 	//for (int i = 0; i < pos.size(); i++) {
 	//	float t = i / float(pos.size());
@@ -288,13 +268,6 @@ void display_scene()
 	//	sphere.shading.color = v;
 	//	draw(sphere, scene_env);
 	//}
-
-	//sphere.transform.translate = c.p0();
-	//sphere.transform.scale = 0.012f;
-	//draw(sphere, scene_env);
-	//sphere.transform.translate = c.p1();
-	//sphere.transform.scale = 0.012f;
-	//draw(sphere, scene_env);
 
 	mesh cylinder_mesh;// = c.c_mesh();
 	mesh_drawable cylinder_mesh_drawable; // = mesh_drawable(cylinder_mesh);

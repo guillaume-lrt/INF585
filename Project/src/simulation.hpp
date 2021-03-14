@@ -86,18 +86,12 @@ class Cylinder {
                         int Sample_height = 2, int Sample_circ = 15, bool closed = false, bool half = false) : 
                         m_radius(radius), m_p0(p0), m_p1(p1), N_sample_height(Sample_height), N_sample_circ(Sample_circ), is_closed(closed), is_half(half){
             m_height = norm(p1 - p0);
-            m_normals = {}; m_positions = {};
-            //N_sample_length = int(m_height / (2 * 3.14f * radius) * (N_sample_circ - 1) + 1.5f);
-            //N_sample_length = int(m_height * 10 + 2.f);
-            //N_sample_height = int(m_height * 10 + 2.f);
-            //std::cout << N_sample_length << std::endl;            
+            m_normals = {}; m_positions = {};           
         }
 
         inline ~Cylinder(){}
 
         inline void update_mesh() {
-            //N_sample_length = int(m_height / (2 * 3.14f * m_radius) * (N_sample_circ - 1) + 1.5f);
-            //N_sample_height = int(m_height * 10 + 2.f);
             if (is_half)
                 m_mesh = mesh_primitive_half_cylinder(m_radius, m_p0, m_p1, N_sample_height, int(N_sample_circ/2.f), is_closed);
             else
@@ -105,31 +99,6 @@ class Cylinder {
             m_mesh.compute_normal();
             m_normals = -m_mesh.normal;
             m_positions = m_mesh.position;
-            //buffer<vec3> m_positions_temp = m_mesh.position;
-            //buffer<vec3> m_normals_temp = m_mesh.normal;
-            //buffer<vec2> uv_temp = {};
-            //buffer<vec3> color_temp = {};
-            //int N = m_positions_temp.size();
-            //m_normals = {}; m_positions = {};
-
-            //for (int i = 0; i < N; i++) {
-            //    bool is_equal = false;          // check if pos[i] is diff from all other points
-            //    if (!is_half) {
-            //        m_normals.push_back(-m_normals_temp[i]);
-            //        m_positions.push_back(m_positions_temp[i]);
-            //    }
-            //    else if (m_normals_temp[i].z <= 0){
-            //        m_normals.push_back(-m_normals_temp[i]);
-            //        m_positions.push_back(m_positions_temp[i]);
-            //        uv_temp.push_back(m_mesh.uv[i]);
-            //        color_temp.push_back(m_mesh.color[i]);
-            //    }
-            //}
-            //m_mesh.position = m_positions;
-            //m_mesh.normal = m_normals;
-            //m_mesh.uv = uv_temp;
-            //m_mesh.color = color_temp;
-            //printf("test");
         }
 
         inline const float& radius() const { return m_radius; }
