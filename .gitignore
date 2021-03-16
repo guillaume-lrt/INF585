@@ -1,2 +1,5 @@
 build/
 inf585_vcl/
+.ini
+.exe
+.ilk
